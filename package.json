@@ -7,22 +7,34 @@
   ],
   "scripts": {
     "dev": "turbo run dev",
+    "dev:root": "next dev",
     "dev:anime-blog": "cd apps/anime-blog && npm run dev",
     "dev:tech-blog": "cd apps/tech-blog && npm run dev",
-    "dev:tool": "cd apps/tool && npm run dev",
+    "dev:tools": "cd apps/tools && npm run dev",
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
     "test": "turbo run test"
   },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.460.0",
+    "next": "^14.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.4"
+  },
   "devDependencies": {
-    "turbo": "^1.13.3",
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "turbo": "^1.13.3"
   },
   "packageManager": "npm@10.3.0",
   "engines": {
-    "node": "20.11.1",
-    "npm": "10.3.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

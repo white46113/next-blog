@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "esnext",
-    "lib": ["dom", "dom.iterable", "es6"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -21,10 +25,20 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/ui/*": ["packages/ui/*"],
-      "@/components/*": ["packages/ui/*"],
-      "@/lib/*": ["packages/ui/lib/*"],
-      "@/*": ["./apps/*/app/*"]
+      "@/ui/*": [
+        "packages/ui/*"
+      ],
+      "@/components/*": [
+        "src/components/*",
+        "packages/ui/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*",
+        "packages/ui/lib/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
     }
   },
   "include": [
@@ -33,5 +47,7 @@
     "**/*.jsx",
     ".next/types/**/*.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
