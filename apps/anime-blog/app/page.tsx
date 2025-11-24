@@ -13,6 +13,7 @@ export const metadata = generateMetadata({
   description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
   canonical: 'https://animeblog.com',
   ogImage: '/anime-hero.jpg',
+  article: null,
   alternateUrls: {
     en: 'https://animeblog.com',
     es: 'https://animeblog.com/es'
