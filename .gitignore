@@ -18,6 +18,7 @@ build/
 .cache/
 **/.cache/
 
+
 # Environment variables
 .env
 .env.local
