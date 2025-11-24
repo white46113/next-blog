@@ -1,4 +1,4 @@
-export default function RssRoute() {
+export async function GET() {
   const posts = [
     {
       title: "Top 10 Anime to Watch in 2025",

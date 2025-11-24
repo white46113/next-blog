@@ -1,4 +1,4 @@
-export default function RobotsRoute() {
+export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /api/
