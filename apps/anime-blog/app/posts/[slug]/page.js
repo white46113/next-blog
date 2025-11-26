@@ -57,6 +57,9 @@ const animeData = [
 export const metadata = {
   title: "Top 10 Anime to Watch in 2025 | Anime Blog",
   description: "From mind-bending sci-fi to heartwarming slice-of-life, discover the must-watch anime series that are defining 2025's animation landscape.",
+  alternates: {
+    canonical: "https://anime.weebcoder.com/posts/top-10-2025-amime",
+  },
 };
 
 export default function PostPage() {

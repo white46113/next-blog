@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BookOpen, Code, FileText } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Tech Blog - Latest Technology News & Tutorials',
+    description: 'Your go-to resource for technology insights, programming tutorials, and in-depth technical articles.',
+    alternates: {
+        canonical: 'https://tech.weebcoder.com',
+    },
+};
 
 export default function HomePage() {
     const contentTypes = [

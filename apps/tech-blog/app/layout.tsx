@@ -4,10 +4,57 @@ import "../../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Tech Blog - Latest Technology News & Tutorials",
+    metadataBase: new URL('https://tech.weebcoder.com'),
+    title: {
+        default: 'Tech Blog - Latest Technology News & Tutorials',
+        template: '%s | Tech Blog'
+    },
     description: "Explore the latest in technology, programming tutorials, and in-depth articles about web development, AI, and software engineering.",
+    keywords: ['technology', 'programming', 'web development', 'tutorials', 'AI', 'software engineering', 'coding', 'tech news'],
+    authors: [{ name: 'WeebCoder' }],
+    creator: 'WeebCoder',
+    publisher: 'WeebCoder',
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
     icons: {
         icon: "/favicon.svg",
+    },
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://tech.weebcoder.com',
+        siteName: 'Tech Blog',
+        title: 'Tech Blog - Latest Technology News & Tutorials',
+        description: 'Explore the latest in technology, programming tutorials, and in-depth articles about web development, AI, and software engineering.',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Tech Blog',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Tech Blog - Latest Technology News & Tutorials',
+        description: 'Explore the latest in technology, programming tutorials, and in-depth articles about web development, AI, and software engineering.',
+        images: ['/og-image.png'],
+        creator: '@weebcoder',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
 };
 

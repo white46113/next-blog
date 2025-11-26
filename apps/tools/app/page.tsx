@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FileImage, Calculator, Wrench, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Free Online Tools - Converters & Calculators',
+    description: 'Convert files, process images, and calculate metrics - all in your browser. Your data never leaves your device.',
+    alternates: {
+        canonical: 'https://tools.weebcoder.com',
+    },
+};
 
 export default function HomePage() {
     const toolCategories = [

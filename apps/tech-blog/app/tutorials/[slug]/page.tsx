@@ -53,10 +53,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: `${tutorial.title} | TechBlog Tutorials`,
         description: tutorial.content.substring(0, 160),
+        alternates: {
+            canonical: `https://tech.weebcoder.com/tutorials/${params.slug}`,
+        },
         openGraph: {
             title: tutorial.title,
             description: tutorial.content.substring(0, 160),
             type: "article",
+            url: `https://tech.weebcoder.com/tutorials/${params.slug}`,
         },
     };
 }

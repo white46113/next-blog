@@ -49,10 +49,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: `${article.title} | TechBlog Articles`,
         description: article.content.substring(0, 160),
+        alternates: {
+            canonical: `https://tech.weebcoder.com/articles/${params.slug}`,
+        },
         openGraph: {
             title: article.title,
             description: article.content.substring(0, 160),
             type: "article",
+            url: `https://tech.weebcoder.com/articles/${params.slug}`,
         },
     };
 }

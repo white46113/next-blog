@@ -11,12 +11,11 @@ import { ArrowRight, Github, Twitter, Linkedin, PlayCircle, Star } from "lucide-
 export const metadata = generateMetadata({
   title: 'Anime Blog - Your Gateway to Japanese Animation',
   description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
-  canonical: 'https://animeblog.com',
+  canonical: 'https://anime.weebcoder.com',
   ogImage: '/anime-hero.jpg',
   article: null,
   alternateUrls: {
-    en: 'https://animeblog.com',
-    es: 'https://animeblog.com/es'
+    en: 'https://anime.weebcoder.com',
   }
 });
 
