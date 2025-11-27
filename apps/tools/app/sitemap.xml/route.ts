@@ -13,6 +13,30 @@ export function GET() {
             lastmod: currentDate,
             changefreq: 'weekly',
             priority: '0.9'
+        },
+        {
+            url: 'https://tools.weebcoder.com/privacy',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.5'
+        },
+        {
+            url: 'https://tools.weebcoder.com/terms',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.5'
+        },
+        {
+            url: 'https://tools.weebcoder.com/about',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.6'
+        },
+        {
+            url: 'https://tools.weebcoder.com/contact',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.6'
         }
     ];
 

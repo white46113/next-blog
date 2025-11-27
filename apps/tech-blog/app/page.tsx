@@ -86,7 +86,14 @@ export default function HomePage() {
                         <Link href="/blog" className="transition-colors hover:text-primary">Blog</Link>
                         <Link href="/tutorials" className="transition-colors hover:text-primary">Tutorials</Link>
                         <Link href="/articles" className="transition-colors hover:text-primary">Articles</Link>
+
+                        <Link href="/privacy" className="transition-colors hover:text-primary">Privacy Policy</Link>
+                        <Link href="/terms" className="transition-colors hover:text-primary">Terms of Service</Link>
+                        <Link href="/contact" className="transition-colors hover:text-primary">Contact</Link>
+                        <Link href="/about" className="transition-colors hover:text-primary">About</Link>
                     </nav>
+
+
                     <Button size="sm">Subscribe</Button>
                 </div>
             </header>

@@ -25,6 +25,30 @@ export function GET() {
             lastmod: currentDate,
             changefreq: 'weekly',
             priority: '0.8'
+        },
+        {
+            url: 'https://tech.weebcoder.com/privacy',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.5'
+        },
+        {
+            url: 'https://tech.weebcoder.com/terms',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.5'
+        },
+        {
+            url: 'https://tech.weebcoder.com/about',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.6'
+        },
+        {
+            url: 'https://tech.weebcoder.com/contact',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.6'
         }
     ];
 

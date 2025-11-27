@@ -150,6 +150,7 @@ export default function HomePage() {
             <footer className="py-12 px-4 bg-background border-t">
                 <div className="container mx-auto text-center text-sm text-muted-foreground">
                     <p>© 2024 Tools. All rights reserved.</p>
+                    <p><Link href="/privacy">Privacy Policy</Link> | <Link href="/terms">Terms of Service</Link> | <Link href="/contact">Contact</Link></p>
                 </div>
             </footer>
         </div>

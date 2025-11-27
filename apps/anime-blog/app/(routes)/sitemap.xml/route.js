@@ -21,6 +21,30 @@ export function GET() {
       lastmod: '2025-01-18T10:00:00Z',
       changefreq: 'weekly',
       priority: '0.9'
+    },
+    {
+      url: 'https://anime.weebcoder.com/privacy',
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.5'
+    },
+    {
+      url: 'https://anime.weebcoder.com/terms',
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.5'
+    },
+    {
+      url: 'https://anime.weebcoder.com/about',
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.6'
+    },
+    {
+      url: 'https://anime.weebcoder.com/contact',
+      lastmod: currentDate,
+      changefreq: 'monthly',
+      priority: '0.6'
     }
   ];
 
