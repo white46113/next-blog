@@ -1,4 +1,4 @@
-import { generateMetadata } from '@repo/ui';
+import type { Metadata } from 'next';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,16 +8,34 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Github, Twitter, Linkedin, PlayCircle, Star } from "lucide-react";
 
-export const metadata = generateMetadata({
+export const metadata: Metadata = {
   title: 'Anime Blog - Your Gateway to Japanese Animation',
   description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
-  canonical: 'https://anime.weebcoder.com',
-  ogImage: '/anime-hero.jpg',
-  article: null,
-  alternateUrls: {
-    en: 'https://anime.weebcoder.com',
-  }
-});
+  alternates: {
+    canonical: 'https://anime.weebcoder.com',
+  },
+  openGraph: {
+    title: 'Anime Blog - Your Gateway to Japanese Animation',
+    description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
+    url: 'https://anime.weebcoder.com',
+    siteName: 'Anime Blog',
+    type: 'website',
+    images: [
+      {
+        url: '/anime-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Anime Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anime Blog - Your Gateway to Japanese Animation',
+    description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
+    images: ['/anime-hero.jpg'],
+  },
+};
 
 export default function HomePage() {
   const featuredPosts = [
