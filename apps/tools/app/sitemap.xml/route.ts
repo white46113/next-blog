@@ -15,6 +15,18 @@ export function GET() {
             priority: '0.9'
         },
         {
+            url: 'https://tools.weebcoder.com/tools/percentage-calculator',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
+            url: 'https://tools.weebcoder.com/tools/qr-code-generator',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
             url: 'https://tools.weebcoder.com/privacy',
             lastmod: currentDate,
             changefreq: 'monthly',

@@ -93,12 +93,12 @@ export default function HomePage() {
             <Link href="#" className="transition-colors hover:text-primary">Recommendations</Link>
             <Link href="#" className="transition-colors hover:text-primary">News</Link>
           </nav>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" className="hidden sm:flex">
               Sign In
             </Button>
             <Button size="sm">Subscribe</Button>
-          </div>
+          </div> */}
         </div>
       </header>
 

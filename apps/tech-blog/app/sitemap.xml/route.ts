@@ -27,6 +27,12 @@ export function GET() {
             priority: '0.8'
         },
         {
+            url: 'https://tech.weebcoder.com/articles/10-signs-your-phone-is-hacked',
+            lastmod: '2025-01-10T00:00:00Z',
+            changefreq: 'weekly',
+            priority: '0.9'
+        },
+        {
             url: 'https://tech.weebcoder.com/privacy',
             lastmod: currentDate,
             changefreq: 'monthly',

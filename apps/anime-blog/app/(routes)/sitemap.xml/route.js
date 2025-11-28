@@ -16,8 +16,9 @@ export function GET() {
       changefreq: 'daily',
       priority: '0.8'
     },
+
     {
-      url: 'https://anime.weebcoder.com/posts/top-10-2025-amime',
+      url: 'https://anime.weebcoder.com/posts/top-10-anime-2025',
       lastmod: '2025-01-18T10:00:00Z',
       changefreq: 'weekly',
       priority: '0.9'
