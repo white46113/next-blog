@@ -1,9 +1,11 @@
 // apps/anime-blog/app/(routes)/sitemap.xml/route.js
 
+import { posts } from '@/lib/posts';
+
 export function GET() {
   const currentDate = new Date().toISOString();
 
-  const pages = [
+  const staticPages = [
     {
       url: 'https://anime.weebcoder.com/',
       lastmod: currentDate,
@@ -15,13 +17,6 @@ export function GET() {
       lastmod: currentDate,
       changefreq: 'daily',
       priority: '0.8'
-    },
-
-    {
-      url: 'https://anime.weebcoder.com/posts/top-10-anime-2025',
-      lastmod: '2025-01-18T10:00:00Z',
-      changefreq: 'weekly',
-      priority: '0.9'
     },
     {
       url: 'https://anime.weebcoder.com/privacy',
@@ -48,6 +43,15 @@ export function GET() {
       priority: '0.6'
     }
   ];
+
+  const postPages = Object.keys(posts).map((slug) => ({
+    url: `https://anime.weebcoder.com/posts/${slug}`,
+    lastmod: posts[slug].date ? new Date(posts[slug].date).toISOString() : currentDate,
+    changefreq: 'weekly',
+    priority: '0.9'
+  }));
+
+  const pages = [...staticPages, ...postPages];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

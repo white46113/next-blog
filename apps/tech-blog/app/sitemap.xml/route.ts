@@ -1,7 +1,9 @@
+import { articles } from '../../lib/articles';
+
 export function GET() {
     const currentDate = new Date().toISOString();
 
-    const pages = [
+    const staticPages = [
         {
             url: 'https://tech.weebcoder.com/',
             lastmod: currentDate,
@@ -25,12 +27,6 @@ export function GET() {
             lastmod: currentDate,
             changefreq: 'weekly',
             priority: '0.8'
-        },
-        {
-            url: 'https://tech.weebcoder.com/articles/10-signs-your-phone-is-hacked',
-            lastmod: '2025-01-10T00:00:00Z',
-            changefreq: 'weekly',
-            priority: '0.9'
         },
         {
             url: 'https://tech.weebcoder.com/privacy',
@@ -57,6 +53,15 @@ export function GET() {
             priority: '0.6'
         }
     ];
+
+    const articlePages = Object.keys(articles).map((slug) => ({
+        url: `https://tech.weebcoder.com/articles/${slug}`,
+        lastmod: articles[slug as keyof typeof articles].date ? new Date(articles[slug as keyof typeof articles].date).toISOString() : currentDate,
+        changefreq: 'weekly',
+        priority: '0.9'
+    }));
+
+    const pages = [...staticPages, ...articlePages];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

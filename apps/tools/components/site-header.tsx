@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Wrench } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+
 
 export function SiteHeader() {
     return (
@@ -12,9 +15,14 @@ export function SiteHeader() {
                     <span className="font-bold text-xl tracking-tight">Tools</span>
                 </Link>
                 <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <Link href="/#converters" className="transition-colors hover:text-primary">Converters</Link>
-                    <Link href="/#calculators" className="transition-colors hover:text-primary">Calculators</Link>
+                    <Link href="/">
+                        <Button variant="ghost" size="sm">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            All Tools
+                        </Button>
+                    </Link>
                 </nav>
+
             </div>
         </header>
     );

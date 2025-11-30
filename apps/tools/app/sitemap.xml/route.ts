@@ -1,7 +1,9 @@
+import { articles } from '../../lib/articles';
+
 export function GET() {
     const currentDate = new Date().toISOString();
 
-    const pages = [
+    const staticPages = [
         {
             url: 'https://tools.weebcoder.com/',
             lastmod: currentDate,
@@ -51,6 +53,18 @@ export function GET() {
             priority: '0.6'
         }
     ];
+
+    const articlePages = Object.keys(articles).map((slug) => {
+        const article = articles[slug as keyof typeof articles];
+        return {
+            url: `https://tools.weebcoder.com/articles/${slug}`,
+            lastmod: article.date ? new Date(article.date).toISOString() : currentDate,
+            changefreq: 'weekly',
+            priority: '0.9'
+        };
+    });
+
+    const pages = [...staticPages, ...articlePages];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -46,22 +46,7 @@ export default function BmiCalculatorPage() {
     return (
         <div className="min-h-screen bg-background">
             {/* Header */}
-            <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-                <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl">
-                            T
-                        </div>
-                        <span className="font-bold text-xl tracking-tight">Tools</span>
-                    </Link>
-                    <Link href="/">
-                        <Button variant="ghost" size="sm">
-                            <ArrowLeft className="mr-2 h-4 w-4" />
-                            All Tools
-                        </Button>
-                    </Link>
-                </div>
-            </header>
+
 
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 <div className="mb-8">
