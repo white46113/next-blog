@@ -41,9 +41,9 @@ export default function HomePage() {
   const featuredPosts = [
     {
       id: 1,
-      title: "Top 10 Anime to Watch in 2025",
-      excerpt: "From mind-bending sci-fi to heartwarming slice-of-life, discover the must-watch anime series that are defining 2025's animation landscape.",
-      slug: "top-10-anime-to-watch-2025",
+      title: "Top 10 Anime to Watch in 2025 – The Ultimate Guide",
+      excerpt: "From Attack on Titan: Legacy to Demon Slayer: Infinite Castle Arc, discover the must-watch anime series defining 2025.",
+      slug: "top-10-anime-2025",
       date: "Jan 18, 2025",
       readTime: "10 min read",
       category: "Recommendations",
@@ -52,25 +52,14 @@ export default function HomePage() {
     },
     {
       id: 2,
-      title: "The Evolution of Isekai: A Deep Dive",
-      excerpt: "Explore how the isekai genre has transformed from simple fantasy tropes to complex narratives that challenge traditional storytelling.",
-      slug: "evolution-isekai-deep-dive",
-      date: "Jan 12, 2025",
+      title: "The Best Romance Anime of All Time",
+      excerpt: "Get ready to feel all the feels! Our definitive guide to the best romance anime of all time, from heart-pounding classics to modern masterpieces.",
+      slug: "best-romance-anime",
+      date: "Nov 30, 2025",
       readTime: "15 min read",
-      category: "Analysis",
-      rating: "8.8",
-      image: "https://images.unsplash.com/photo-1541562232579-512a21360020?auto=format&fit=crop&q=80&w=800&h=400"
-    },
-    {
-      id: 3,
-      title: "Studio Ghibli's Influence on Modern Anime",
-      excerpt: "How Hayao Miyazaki and Studio Ghibli continue to shape the anime industry decades after their groundbreaking works.",
-      slug: "studio-ghibli-influence-modern-anime",
-      date: "Jan 08, 2025",
-      readTime: "12 min read",
-      category: "Industry",
+      category: "Recommendations",
       rating: "9.2",
-      image: "https://images.unsplash.com/photo-1559981421-3e0c0d712e1a?auto=format&fit=crop&q=80&w=800&h=400"
+      image: "https://images.unsplash.com/photo-1541562232579-512a21360020?auto=format&fit=crop&q=80&w=800&h=400"
     }
   ];
 
@@ -88,7 +77,7 @@ export default function HomePage() {
             <span className="font-bold text-xl tracking-tight">AnimeBlog</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="#" className="transition-colors hover:text-primary">Home</Link>
+            <Link href="/" className="transition-colors hover:text-primary">Home</Link>
             <Link href="#" className="transition-colors hover:text-primary">Reviews</Link>
             <Link href="#" className="transition-colors hover:text-primary">Recommendations</Link>
             <Link href="#" className="transition-colors hover:text-primary">News</Link>
@@ -141,42 +130,44 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post) => (
-                <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 border-muted overflow-hidden flex flex-col">
-                  <div className="aspect-video w-full overflow-hidden bg-muted relative">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <Badge className="bg-background/90 text-foreground backdrop-blur hover:bg-background/90">
-                        {post.category}
-                      </Badge>
-                      <Badge variant="secondary" className="bg-yellow-400/90 text-yellow-950 backdrop-blur flex items-center gap-1">
-                        <Star className="w-3 h-3 fill-current" /> {post.rating}
-                      </Badge>
-                    </div>
-                  </div>
-                  <CardHeader className="space-y-2">
-                    <CardTitle className="line-clamp-2 group-hover:text-purple-600 transition-colors">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="mt-auto">
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Avatar className="h-6 w-6">
-                          <AvatarFallback>A</AvatarFallback>
-                        </Avatar>
-                        <span>AnimeBlog Team</span>
+                <Link key={post.id} href={`/posts/${post.slug}`} className="block h-full">
+                  <Card className="group hover:shadow-lg transition-all duration-300 border-muted overflow-hidden flex flex-col h-full">
+                    <div className="aspect-video w-full overflow-hidden bg-muted relative">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4 flex gap-2">
+                        <Badge className="bg-background/90 text-foreground backdrop-blur hover:bg-background/90">
+                          {post.category}
+                        </Badge>
+                        <Badge variant="secondary" className="bg-yellow-400/90 text-yellow-950 backdrop-blur flex items-center gap-1">
+                          <Star className="w-3 h-3 fill-current" /> {post.rating}
+                        </Badge>
                       </div>
-                      <span>{post.date}</span>
                     </div>
-                  </CardContent>
-                </Card>
+                    <CardHeader className="space-y-2">
+                      <CardTitle className="line-clamp-2 group-hover:text-purple-600 transition-colors">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2">
+                        {post.excerpt}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="mt-auto">
+                      <div className="flex items-center justify-between text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <Avatar className="h-6 w-6">
+                            <AvatarFallback>A</AvatarFallback>
+                          </Avatar>
+                          <span>AnimeBlog Team</span>
+                        </div>
+                        <span>{post.date}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

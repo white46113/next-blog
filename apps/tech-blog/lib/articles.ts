@@ -1,6 +1,8 @@
 import PhoneHacked from '../components/articles/PhoneHacked';
 import HowToSpeedUpPhone from '../components/articles/HowToSpeedUpPhone';
 
+import AndroidStorageGuide from '../components/articles/AndroidStorageGuide';
+
 export const articles = {
     '10-signs-your-phone-is-hacked': {
         title: '10 Signs Your Phone Is Hacked (And How to Fix It Fast)',
@@ -15,6 +17,13 @@ export const articles = {
         date: 'January 15, 2025',
         readTime: '10 min read',
         component: HowToSpeedUpPhone,
+    },
+    'android-storage-guide': {
+        title: 'The Modern Android Storage Crisis: 15 Proven Ways to Reclaim Space',
+        description: 'Struggling with full storage? Discover 15 proven methods to reclaim 5-50GB of space on your Android device without losing important data.',
+        date: 'January 28, 2025',
+        readTime: '15 min read',
+        component: AndroidStorageGuide,
     },
 };
 

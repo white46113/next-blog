@@ -43,31 +43,31 @@ export default function HomePage() {
 
     const featuredContent = [
         {
-            type: "Tutorial",
-            title: "Building a Full-Stack App with Next.js 14",
-            excerpt: "Learn how to build a modern full-stack application using Next.js 14, TypeScript, and Prisma.",
-            slug: "nextjs-14-fullstack-app",
-            category: "tutorials",
-            readTime: "15 min read",
-            date: "Nov 20, 2024"
+            type: "Article",
+            title: "10 Signs Your Phone Is Hacked (And How to Fix It Fast)",
+            excerpt: "A complete 3,000-word guide explaining the top signs your phone has been hacked, how to check for malware, and how to remove a hacker from your device.",
+            slug: "10-signs-your-phone-is-hacked",
+            category: "articles",
+            readTime: "12 min read",
+            date: "Jan 10, 2025"
         },
         {
             type: "Article",
-            title: "The Future of Web Development in 2025",
-            excerpt: "Exploring emerging trends, frameworks, and technologies that will shape web development.",
-            slug: "future-web-development-2025",
+            title: "How to Speed Up Your Phone: Your 2025 Guide to a Faster Device",
+            excerpt: "Is your phone feeling slow? Our definitive 2025 guide reveals proven strategies to speed up your Android or iPhone, from quick cleans to advanced tricks.",
+            slug: "how-to-speed-up-your-phone",
             category: "articles",
             readTime: "10 min read",
-            date: "Nov 18, 2024"
+            date: "Jan 15, 2025"
         },
         {
-            type: "Blog",
-            title: "10 VS Code Extensions Every Developer Needs",
-            excerpt: "Boost your productivity with these essential VS Code extensions for modern development.",
-            slug: "vscode-extensions-2024",
-            category: "blog",
-            readTime: "5 min read",
-            date: "Nov 15, 2024"
+            type: "Article",
+            title: "The Modern Android Storage Crisis: 15 Proven Ways to Reclaim Space",
+            excerpt: "Struggling with full storage? Discover 15 proven methods to reclaim 5-50GB of space on your Android device without losing important data.",
+            slug: "android-storage-guide",
+            category: "articles",
+            readTime: "15 min read",
+            date: "Jan 28, 2025"
         }
     ];
 

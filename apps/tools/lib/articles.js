@@ -3,6 +3,8 @@ import PercentageIncreaseCalculator from '@/components/articles/PercentageIncrea
 import PercentageDecreaseCalculator from '@/components/articles/PercentageDecreaseCalculator';
 import WhatIsPercentage from '@/components/articles/WhatIsPercentage';
 import PercentageDifferenceCalculator from '@/components/articles/PercentageDifferenceCalculator';
+import LoanEMICalculator from '@/components/articles/LoanEMICalculator';
+import GstVatCalculator from '@/components/articles/GstVatCalculator';
 
 export const articles = {
     'how-to-calculate-percentage': {
@@ -39,6 +41,20 @@ export const articles = {
         date: 'January 19, 2025',
         readTime: '11 min read',
         component: PercentageDifferenceCalculator,
+    },
+    'loan-emi-calculator': {
+        title: 'Loan EMI Calculator: Calculate Your Monthly Installments Instantly',
+        description: 'Plan your loans effectively with our Loan EMI Calculator. Calculate monthly installments for home, car, or personal loans with accurate interest breakdowns.',
+        date: 'January 20, 2025',
+        readTime: '5 min use',
+        component: LoanEMICalculator,
+    },
+    'gst-vat-calculator': {
+        title: 'GST / VAT Calculator: Add or Remove Tax from Amount',
+        description: 'Easily calculate GST or VAT for any amount. Use our tool to add tax to a net price or remove tax from a total price (inclusive/exclusive calculations).',
+        date: 'January 21, 2025',
+        readTime: '5 min use',
+        component: GstVatCalculator,
     },
 };
 
