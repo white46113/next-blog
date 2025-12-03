@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import '../../styles/globals.css';
+import { GoogleAnalytics } from "@repo/lib/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <GoogleAnalytics />
             <body className={inter.className}>
                 <div className="flex min-h-screen flex-col">
                     <SiteHeader />

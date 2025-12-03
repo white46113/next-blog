@@ -2,8 +2,10 @@
     "name": "@repo/lib",
     "version": "0.0.0",
     "private": true,
-    "main": "./seo.ts",
-    "types": "./seo.ts",
+    "exports": {
+        "./seo": "./seo.ts",
+        "./GoogleAnalytics": "./GoogleAnalytics.tsx"
+    },
     "scripts": {
         "lint": "eslint . --max-warnings 0"
     },
