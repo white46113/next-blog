@@ -21,7 +21,9 @@ export const metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
   openGraph: {
     type: 'website',
