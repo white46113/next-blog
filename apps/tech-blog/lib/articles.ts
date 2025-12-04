@@ -1,6 +1,7 @@
 import PhoneHacked from '../components/articles/PhoneHacked';
 import HowToSpeedUpPhone from '../components/articles/HowToSpeedUpPhone';
 import AndroidStorageGuide from '../components/articles/AndroidStorageGuide';
+import Windows11Guide from '../components/articles/Windows11Guide';
 
 export const articles = {
     '10-signs-your-phone-is-hacked': {
@@ -63,6 +64,27 @@ export const articles = {
             { question: 'Why does storage fill up again?', answer: 'App caches, auto-downloads, and system updates. Automation is key.' },
             { question: 'Are cleaner apps safe?', answer: 'Stick to Google Files, SD Maid, or CCleaner. Avoid generic boosters.' },
             { question: 'What should I NEVER delete?', answer: 'Android system folders, encrypted files, and app data for essential apps.' }
+        ]
+    },
+    'windows-11-guide': {
+        title: 'The Ultimate Guide to Windows 11: Common Problems, Clever Fixes & Insider Secrets',
+        description: 'Your comprehensive companion through Windows 11 quirks. Solve installation issues, performance problems, and discover hidden features that make Windows 11 more enjoyable.',
+        date: 'February 5, 2025',
+        readTime: '12 min read',
+        author: 'Tech Team',
+        image: 'https://tech.weebcoder.com/og-image.jpg',
+        category: 'Windows',
+        wordCount: 3200,
+        component: Windows11Guide,
+        faqs: [
+            { question: 'Can I still upgrade to Windows 11 for free?', answer: 'Yes! If you have a genuine Windows 10 license, Windows 11 remains free through Windows Update or Media Creation Tool.' },
+            { question: 'Will Windows 11 slow down my older PC?', answer: 'Not necessarily. While requirements are stricter, optimized Windows 11 can perform similarly to Windows 10 on supported hardware.' },
+            { question: 'How do I move the taskbar to the top or sides?', answer: 'Natively, Windows 11 only supports bottom alignment. Third-party tools like ExplorerPatcher can restore this functionality.' },
+            { question: 'Is it safe to disable TPM after installation?', answer: 'No! Windows 11 may fail to boot or receive updates. Keep TPM enabled for security and stability.' },
+            { question: 'Why can\'t I drag files to the taskbar?', answer: 'Microsoft removed this feature initially but reinstated it in 2022 updates. Ensure you\'re updated to build 22621 or later.' },
+            { question: 'How do I bypass Microsoft account requirement?', answer: 'During setup, disconnect internet. When asked for account, enter no@thankyou.com with any password—the error will offer local account option.' },
+            { question: 'What happened to Cortana?', answer: 'Cortana was deprecated from initial Windows 11 setup but remains available in Store for those who want it.' },
+            { question: 'Can I get the old Windows 10-style Start menu back?', answer: 'Yes! Apps like Start11 or Open-Shell can customize Start to resemble Windows 10 or even Windows 7.' }
         ]
     },
 };
