@@ -40,6 +40,41 @@ export default function HomePage() {
 
     return (
         <>
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "WebSite",
+                            "@id": "https://tools.weebcoder.com/#website",
+                            "url": "https://tools.weebcoder.com/",
+                            "name": "WeebCoder Tools",
+                            "description": "Free online tools for file conversion, image processing, and calculations. No registration required, privacy-focused.",
+                            "publisher": {
+                                "@id": "https://tools.weebcoder.com/#organization"
+                            },
+                            "inLanguage": "en-US"
+                        },
+                        {
+                            "@type": "Organization",
+                            "@id": "https://tools.weebcoder.com/#organization",
+                            "name": "WeebCoder",
+                            "url": "https://tools.weebcoder.com/",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://tools.weebcoder.com/logo.png",
+                                "width": 512,
+                                "height": 512
+                            },
+                            "sameAs": [
+                                "https://tools.weebcoder.com/"
+                            ]
+                        }
+                    ]
+                })
+            }} />
+
             {/* Hero Section */}
             <section className="py-20 md:py-32 px-4 border-b bg-gradient-to-b from-background to-muted/20">
                 <div className="container mx-auto max-w-4xl text-center space-y-8">

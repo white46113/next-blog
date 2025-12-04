@@ -17,6 +17,26 @@ export default function PngToWebpPage() {
     const [originalSize, setOriginalSize] = useState<number>(0);
     const [convertedSize, setConvertedSize] = useState<number>(0);
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PNG to WebP Converter",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online PNG to WebP converter. Convert PNG images to modern WebP format for better compression and faster loading.",
+        "featureList": [
+            "Convert PNG to WebP",
+            "Adjustable quality settings",
+            "Privacy-focused - all processing in browser"
+        ]
+    };
+
+
     const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
@@ -118,6 +138,9 @@ export default function PngToWebpPage() {
 
     return (
         <div className="min-h-screen bg-background">
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 <div className="mb-8">
                     <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">

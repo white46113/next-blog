@@ -13,6 +13,26 @@ export default function JpgToPdfPage() {
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [converted, setConverted] = useState(false);
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "JPG to PDF Converter",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online JPG to PDF converter. Convert your JPG images to PDF documents instantly in your browser.",
+        "featureList": [
+            "Convert JPG/JPEG to PDF",
+            "Instant conversion in browser",
+            "Privacy-focused - files never leave your device"
+        ]
+    };
+
+
     const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
@@ -102,6 +122,9 @@ export default function JpgToPdfPage() {
 
     return (
         <div className="min-h-screen bg-background">
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 <div className="mb-8">
                     <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">

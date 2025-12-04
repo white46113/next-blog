@@ -150,44 +150,8 @@ export default function PhoneHacked() {
 
     return (
         <div className="space-y-12">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@graph": [
-                        {
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [
-                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tech.weebcoder.com/" },
-                                { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://tech.weebcoder.com/articles" },
-                                { "@type": "ListItem", "position": 3, "name": "10 Signs Your Phone Is Hacked", "item": "https://tech.weebcoder.com/articles/10-signs-your-phone-is-hacked" }
-                            ]
-                        },
-                        {
-                            "@type": "Article",
-                            "headline": "10 Signs Your Phone Is Hacked (And How to Fix It Fast)",
-                            "alternativeHeadline": "How to Know If Your Phone Has Been Hacked",
-                            "description": "A complete 3,000-word guide explaining the top signs your phone has been hacked, how to check for malware, and how to remove a hacker from your device.",
-                            "image": "https://tech.weebcoder.com/default-article-image.jpg",
-                            "author": { "@type": "Person", "name": "Tech Team", "url": "https://tech.weebcoder.com/authors/tech-team" },
-                            "publisher": { "@type": "Organization", "name": "TechBlog", "logo": { "@type": "ImageObject", "url": "https://tech.weebcoder.com/logo.png" } },
-                            "datePublished": "2025-01-10",
-                            "dateModified": "2025-01-10",
-                            "wordCount": "3000",
-                            "inLanguage": "en",
-                            "mainEntityOfPage": "https://tech.weebcoder.com/articles/10-signs-your-phone-is-hacked",
-                            "keywords": ["phone hacked", "smartphone security", "mobile hacking signs", "remove hacker phone", "phone spyware", "how to tell if phone is hacked"]
-                        },
-                        {
-                            "@type": "FAQPage",
-                            "mainEntity": faqs.map(faq => ({
-                                "@type": "Question",
-                                "name": faq.q,
-                                "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-                            }))
-                        }
-                    ]
-                })
-            }} />
+            {/* Main Title */}
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">10 Signs Your Phone Is Hacked (And How to Fix It Fast)</h1>
 
             {/* Introduction */}
             <div className="prose prose-gray dark:prose-invert max-w-none">

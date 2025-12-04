@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,6 +15,26 @@ export default function BmiCalculatorPage() {
     const [height, setHeight] = useState("");
     const [bmi, setBmi] = useState<number | null>(null);
     const [category, setCategory] = useState("");
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BMI Calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online BMI (Body Mass Index) calculator. Calculate your BMI instantly based on your height and weight.",
+        "featureList": [
+            "Calculate BMI from height and weight",
+            "Instant results with category classification",
+            "Privacy-focused - all calculations in browser"
+        ]
+    };
+
 
     const calculateBMI = () => {
         const weightNum = parseFloat(weight);
@@ -45,6 +66,9 @@ export default function BmiCalculatorPage() {
 
     return (
         <div className="min-h-screen bg-background">
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
             {/* Header */}
 
 

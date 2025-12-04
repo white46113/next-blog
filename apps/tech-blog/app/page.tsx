@@ -71,8 +71,44 @@ export default function HomePage() {
         }
     ];
 
+
     return (
         <div className="min-h-screen bg-background">
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "WebSite",
+                            "@id": "https://tech.weebcoder.com/#website",
+                            "url": "https://tech.weebcoder.com/",
+                            "name": "TechBlog",
+                            "description": "Your go-to resource for technology insights, programming tutorials, and in-depth technical articles.",
+                            "publisher": {
+                                "@id": "https://tech.weebcoder.com/#organization"
+                            },
+                            "inLanguage": "en-US"
+                        },
+                        {
+                            "@type": "Organization",
+                            "@id": "https://tech.weebcoder.com/#organization",
+                            "name": "TechBlog",
+                            "url": "https://tech.weebcoder.com/",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://tech.weebcoder.com/logo.png",
+                                "width": 512,
+                                "height": 512
+                            },
+                            "sameAs": [
+                                "https://tech.weebcoder.com/"
+                            ]
+                        }
+                    ]
+                })
+            }} />
+
             {/* Header */}
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">

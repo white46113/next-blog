@@ -115,40 +115,8 @@ export default function HowToSpeedUpPhone() {
 
     return (
         <div className="space-y-12">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@graph": [
-                        {
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [
-                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tech.weebcoder.com/" },
-                                { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://tech.weebcoder.com/articles" },
-                                { "@type": "ListItem", "position": 3, "name": "How to Speed Up Your Phone", "item": "https://tech.weebcoder.com/articles/how-to-speed-up-your-phone" }
-                            ]
-                        },
-                        {
-                            "@type": "Article",
-                            "headline": "How to Speed Up Your Phone: Your 2025 Guide to a Faster Device",
-                            "description": "Is your phone feeling slow? Our definitive 2025 guide reveals proven strategies to speed up your Android or iPhone.",
-                            "image": "https://tech.weebcoder.com/default-article-image.jpg",
-                            "author": { "@type": "Person", "name": "Tech Team", "url": "https://tech.weebcoder.com/authors/tech-team" },
-                            "publisher": { "@type": "Organization", "name": "TechBlog", "logo": { "@type": "ImageObject", "url": "https://tech.weebcoder.com/logo.png" } },
-                            "datePublished": "2025-01-15",
-                            "dateModified": "2025-01-15",
-                            "mainEntityOfPage": "https://tech.weebcoder.com/articles/how-to-speed-up-your-phone",
-                        },
-                        {
-                            "@type": "FAQPage",
-                            "mainEntity": faqs.map(faq => ({
-                                "@type": "Question",
-                                "name": faq.q,
-                                "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-                            }))
-                        }
-                    ]
-                })
-            }} />
+            {/* Main Title */}
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">How to Speed Up Your Phone: Your 2025 Guide to a Faster Device</h1>
 
             {/* Introduction */}
             <div className="prose prose-gray dark:prose-invert max-w-none">

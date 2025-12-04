@@ -65,8 +65,55 @@ export default function HomePage() {
 
   const categories = ['Reviews', 'Recommendations', 'Analysis', 'Industry', 'Manga', 'Characters', 'Soundtracks', 'Conventions'];
 
+  // WebSite JSON-LD
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Anime Blog',
+    url: 'https://anime.weebcoder.com',
+    description: 'Discover the latest anime reviews, recommendations, and insights. Stay updated with the world of Japanese animation and manga culture.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://anime.weebcoder.com/search?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    }
+  };
+
+  // Organization JSON-LD
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Anime Blog',
+    url: 'https://anime.weebcoder.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://anime.weebcoder.com/logo.png',
+      width: 512,
+      height: 512
+    },
+    sameAs: [
+      'https://twitter.com/weebcoder',
+      'https://github.com/weebcoder'
+    ],
+    description: 'Your ultimate destination for anime reviews, recommendations, and insights.'
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      {/* WebSite JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+
+      {/* Organization JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">

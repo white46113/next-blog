@@ -14,11 +14,36 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         };
     }
 
+    const url = `https://tech.weebcoder.com/articles/${params.slug}`;
+
     return {
         title: `${article.title} | Tech Blog`,
         description: article.description,
         alternates: {
-            canonical: `https://tech.weebcoder.com/articles/${params.slug}`,
+            canonical: url,
+        },
+        openGraph: {
+            title: article.title,
+            description: article.description,
+            type: 'article',
+            url: url,
+            siteName: 'Tech Blog',
+            publishedTime: article.date,
+            authors: [article.author || 'Tech Team'],
+            images: [
+                {
+                    url: article.image || 'https://tech.weebcoder.com/og-image.jpg',
+                    width: 1200,
+                    height: 630,
+                    alt: article.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: article.title,
+            description: article.description,
+            images: [article.image || 'https://tech.weebcoder.com/og-image.jpg'],
         },
     };
 }
@@ -32,8 +57,96 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
     const ArticleComponent = article.component;
 
+    // Article JSON-LD
+    const articleJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.description,
+        image: article.image || 'https://tech.weebcoder.com/og-image.jpg',
+        datePublished: article.date,
+        dateModified: article.date,
+        articleSection: article.category || 'Technology',
+        wordCount: article.wordCount || 2000,
+        author: {
+            '@type': 'Person',
+            name: article.author || 'Tech Team',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Tech Blog',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://tech.weebcoder.com/logo.png',
+            },
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://tech.weebcoder.com/articles/${params.slug}`,
+        },
+    };
+
+    // BreadcrumbList JSON-LD
+    const breadcrumbJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://tech.weebcoder.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Articles',
+                item: 'https://tech.weebcoder.com/articles',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: article.title,
+                item: `https://tech.weebcoder.com/articles/${params.slug}`,
+            },
+        ],
+    };
+
+    // FAQ JSON-LD (only if article has FAQs)
+    const faqJsonLd = article.faqs ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: article.faqs.map((faq: any) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    } : null;
+
     return (
         <div className="min-h-screen bg-background">
+            {/* Article JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+            />
+
+            {/* BreadcrumbList JSON-LD */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
+
+            {/* FAQ JSON-LD (conditional) */}
+            {faqJsonLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+                />
+            )}
             {/* Header */}
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">

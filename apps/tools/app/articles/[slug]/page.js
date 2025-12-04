@@ -16,11 +16,38 @@ export async function generateMetadata({ params }) {
         };
     }
 
+    const articleUrl = `https://tools.weebcoder.com/articles/${slug}`;
+    const imageUrl = 'https://tools.weebcoder.com/og-image.png';
+
     return {
         title: `${article.title} | Tools`,
         description: article.description,
         alternates: {
-            canonical: `https://tools.weebcoder.com/articles/${slug}`,
+            canonical: articleUrl,
+        },
+        openGraph: {
+            type: 'article',
+            url: articleUrl,
+            title: article.title,
+            description: article.description,
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: article.title,
+                },
+            ],
+            publishedTime: new Date(article.date).toISOString(),
+            authors: ['Tools Team'],
+            siteName: 'WeebCoder Tools',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: article.title,
+            description: article.description,
+            images: [imageUrl],
+            creator: '@weebcoder',
         },
     };
 }
@@ -35,8 +62,62 @@ export default async function ArticlePage({ params }) {
 
     const ArticleComponent = article.component;
 
+    // JSON-LD structured data
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://tools.weebcoder.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Articles",
+                        "item": "https://tools.weebcoder.com/articles"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": article.title,
+                        "item": `https://tools.weebcoder.com/articles/${slug}`
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "headline": article.title,
+                "description": article.description,
+                "image": "https://tools.weebcoder.com/og-image.png",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Tools Team"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "WeebCoder Tools",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://tools.weebcoder.com/logo.png"
+                    }
+                },
+                "datePublished": new Date(article.date).toISOString(),
+                "dateModified": new Date(article.date).toISOString(),
+                "mainEntityOfPage": `https://tools.weebcoder.com/articles/${slug}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-background">
+            {/* JSON-LD Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
             {/* Header */}
 
 

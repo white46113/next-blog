@@ -15,11 +15,36 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const url = `https://anime.weebcoder.com/posts/${params.slug}`;
+
   return {
     title: `${post.title} | Anime Blog`,
     description: post.description,
     alternates: {
-      canonical: `https://anime.weebcoder.com/posts/${params.slug}`,
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: url,
+      siteName: 'Anime Blog',
+      publishedTime: post.date,
+      authors: [post.author || 'Anime Blog Team'],
+      images: [
+        {
+          url: post.image || 'https://anime.weebcoder.com/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [post.image || 'https://anime.weebcoder.com/og-image.jpg'],
     },
   };
 }
@@ -33,8 +58,96 @@ export default function PostPage({ params }) {
 
   const PostComponent = post.component;
 
+  // JSON-LD structured data for SEO
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    image: post.image || 'https://anime.weebcoder.com/og-image.jpg',
+    datePublished: post.date,
+    dateModified: post.date, // Can be updated when post is modified
+    articleSection: post.category || 'Anime',
+    wordCount: post.wordCount || 2000,
+    author: {
+      '@type': 'Person',
+      name: post.author || 'Anime Blog Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Anime Blog',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://anime.weebcoder.com/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://anime.weebcoder.com/posts/${params.slug}`,
+    },
+  };
+
+  // BreadcrumbList JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://anime.weebcoder.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Posts',
+        item: 'https://anime.weebcoder.com/#posts',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://anime.weebcoder.com/posts/${params.slug}`,
+      },
+    ],
+  };
+
+  // FAQ JSON-LD (only if post has FAQs)
+  const faqJsonLd = post.faqs ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <div className="min-h-screen bg-background">
+      {/* Article JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      {/* FAQ JSON-LD (conditional) */}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
