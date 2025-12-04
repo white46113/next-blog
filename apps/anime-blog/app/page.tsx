@@ -41,6 +41,17 @@ export default function HomePage() {
   const featuredPosts = [
     {
       id: 1,
+      title: "Best Anime Like Solo Leveling: OP Protagonists & Unique Leveling Systems (2025)",
+      excerpt: "Discover the best anime similar to Solo Leveling featuring overpowered protagonists, satisfying power progression, and epic battles.",
+      slug: "best-anime-like-solo-leveling",
+      date: "Dec 4, 2025",
+      readTime: "12 min read",
+      category: "Recommendations",
+      rating: "9.4",
+      image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800&h=400"
+    },
+    {
+      id: 2,
       title: "Top 10 Anime to Watch in 2025 – The Ultimate Guide",
       excerpt: "From Attack on Titan: Legacy to Demon Slayer: Infinite Castle Arc, discover the must-watch anime series defining 2025.",
       slug: "top-10-anime-2025",
@@ -51,7 +62,7 @@ export default function HomePage() {
       image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800&h=400"
     },
     {
-      id: 2,
+      id: 3,
       title: "The Best Romance Anime of All Time",
       excerpt: "Get ready to feel all the feels! Our definitive guide to the best romance anime of all time, from heart-pounding classics to modern masterpieces.",
       slug: "best-romance-anime",
