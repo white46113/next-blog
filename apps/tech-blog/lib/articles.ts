@@ -5,8 +5,8 @@ import Windows11Guide from '../components/articles/Windows11Guide';
 
 export const articles = {
     '10-signs-your-phone-is-hacked': {
-        title: '10 Signs Your Phone Is Hacked (And How to Fix It Fast)',
-        description: 'A complete 3,000-word guide explaining the top signs your phone has been hacked, how to check for malware, and how to remove a hacker from your device.',
+        title: '10 Signs Your Phone Is Hacked in 2025 (And How to Fix It Fast)',
+        description: 'Is your phone acting weird? Discover the 10 telltale signs of phone hacking, learn how to detect hidden malware, and remove hackers from your Android or iPhone in minutes. Complete 3,000-word security guide.',
         date: 'January 10, 2025',
         readTime: '12 min read',
         author: 'Tech Team',
@@ -23,8 +23,8 @@ export const articles = {
         ]
     },
     'how-to-speed-up-your-phone': {
-        title: 'How to Speed Up Your Phone: Your 2025 Guide to a Faster Device',
-        description: 'Is your phone feeling slow? Our definitive 2025 guide reveals proven strategies to speed up your Android or iPhone, from quick cleans to advanced tricks.',
+        title: 'How to Speed Up Your Phone in 2025: 15 Proven Ways (Android & iPhone)',
+        description: 'Is your phone lagging? Learn 15 proven methods to speed up your Android or iPhone in 2025—from quick 2-minute fixes to advanced optimizations. Boost performance by up to 300% without buying a new device.',
         date: 'January 15, 2025',
         readTime: '10 min read',
         author: 'Tech Team',
@@ -46,8 +46,8 @@ export const articles = {
         ]
     },
     'android-storage-guide': {
-        title: 'The Modern Android Storage Crisis: 15 Proven Ways to Reclaim Space',
-        description: 'Struggling with full storage? Discover 15 proven methods to reclaim 5-50GB of space on your Android device without losing important data.',
+        title: 'Android Storage Full? 15 Proven Ways to Reclaim 5-50GB in 2025',
+        description: 'Struggling with "Storage Full" errors? Discover 15 expert-tested methods to reclaim 5-50GB on your Android device in 2025 without deleting photos, apps, or important data. Includes hidden storage hogs most users miss.',
         date: 'January 28, 2025',
         readTime: '15 min read',
         author: 'Tech Team',
@@ -67,8 +67,8 @@ export const articles = {
         ]
     },
     'windows-11-guide': {
-        title: 'The Ultimate Guide to Windows 11: Common Problems, Clever Fixes & Insider Secrets',
-        description: 'Your comprehensive companion through Windows 11 quirks. Solve installation issues, performance problems, and discover hidden features that make Windows 11 more enjoyable.',
+        title: 'Windows 11 Problems? 25+ Fixes for Common Issues in 2025 (Step-by-Step)',
+        description: 'Frustrated with Windows 11? Fix installation errors, performance issues, taskbar bugs, and network problems with our 2025 troubleshooting guide. Includes 25+ proven solutions, hidden features, and expert tips to optimize your PC.',
         date: 'February 5, 2025',
         readTime: '12 min read',
         author: 'Tech Team',

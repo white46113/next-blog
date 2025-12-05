@@ -6,16 +6,16 @@ import { articles } from "../../lib/articles";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Articles - Guides & Tutorials | Tools',
-    description: 'Browse our collection of comprehensive guides and tutorials on percentage calculations, loan EMI, GST/VAT, and more financial tools.',
+    title: 'Free Calculator Guides & Tutorials 2025 | Percentage, EMI, GST Tools',
+    description: 'Master calculations with our free guides! Learn percentage formulas, loan EMI calculations, GST/VAT tools, and more. Step-by-step tutorials with examples and free calculators for business and daily life.',
     alternates: {
         canonical: 'https://tools.weebcoder.com/articles',
     },
     openGraph: {
         type: 'website',
         url: 'https://tools.weebcoder.com/articles',
-        title: 'Articles - Guides & Tutorials',
-        description: 'Browse our collection of comprehensive guides and tutorials on percentage calculations, loan EMI, GST/VAT, and more financial tools.',
+        title: 'Free Calculator Guides & Tutorials 2025 | Percentage, EMI, GST Tools',
+        description: 'Master calculations with our free guides! Learn percentage formulas, loan EMI calculations, GST/VAT tools, and more. Step-by-step tutorials with examples and free calculators for business and daily life.',
         images: [
             {
                 url: 'https://tools.weebcoder.com/og-image.png',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Articles - Guides & Tutorials',
-        description: 'Browse our collection of comprehensive guides and tutorials on percentage calculations, loan EMI, GST/VAT, and more financial tools.',
+        title: 'Free Calculator Guides & Tutorials 2025 | Percentage, EMI, GST Tools',
+        description: 'Master calculations with our free guides! Learn percentage formulas, loan EMI calculations, GST/VAT tools, and more. Step-by-step tutorials with examples and free calculators for business and daily life.',
         images: ['https://tools.weebcoder.com/og-image.png'],
         creator: '@weebcoder',
     },
@@ -44,8 +44,8 @@ export default function ArticlesPage() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Articles - Guides & Tutorials",
-        "description": "Browse our collection of comprehensive guides and tutorials on percentage calculations, loan EMI, GST/VAT, and more financial tools.",
+        "name": "Free Calculator Guides & Tutorials 2025",
+        "description": "Master calculations with our free guides! Learn percentage formulas, loan EMI calculations, GST/VAT tools, and more. Step-by-step tutorials with examples and free calculators for business and daily life.",
         "url": "https://tools.weebcoder.com/articles",
         "publisher": {
             "@type": "Organization",
