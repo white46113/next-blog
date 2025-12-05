@@ -17,7 +17,31 @@ export function GET() {
             priority: '0.9'
         },
         {
+            url: 'https://tools.weebcoder.com/tools/bmi-calculator',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
+            url: 'https://tools.weebcoder.com/tools/jpg-to-pdf',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
+            url: 'https://tools.weebcoder.com/tools/pdf-to-image',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
             url: 'https://tools.weebcoder.com/tools/percentage-calculator',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
+            url: 'https://tools.weebcoder.com/tools/png-to-webp',
             lastmod: currentDate,
             changefreq: 'monthly',
             priority: '0.8'
