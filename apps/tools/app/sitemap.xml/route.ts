@@ -53,6 +53,12 @@ export function GET() {
             priority: '0.8'
         },
         {
+            url: 'https://tools.weebcoder.com/tools/youtube-thumbnail-downloader',
+            lastmod: currentDate,
+            changefreq: 'monthly',
+            priority: '0.8'
+        },
+        {
             url: 'https://tools.weebcoder.com/privacy',
             lastmod: currentDate,
             changefreq: 'monthly',

@@ -24,6 +24,7 @@ export default function HomePage() {
                 { name: "PDF to Image", href: "/tools/pdf-to-image", description: "Convert PDF pages to PNG, JPEG, or WebP" },
                 { name: "PNG to WebP", href: "/tools/png-to-webp", description: "Convert PNG to modern WebP format" },
                 { name: "QR Code Generator", href: "/tools/qr-code-generator", description: "Generate QR codes from text or URL" },
+                { name: "YouTube Thumbnail Downloader", href: "/tools/youtube-thumbnail-downloader", description: "Download YouTube video thumbnails in high quality" },
             ],
             color: "text-blue-600"
         },
