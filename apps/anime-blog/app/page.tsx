@@ -37,6 +37,9 @@ export const metadata: Metadata = {
   },
 };
 
+import IntegratedNav from "@/components/IntegratedNav";
+import CrossAppFooter from "@/components/CrossAppFooter";
+
 export default function HomePage() {
   const featuredPosts = [
     {
@@ -125,29 +128,22 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl">
-              A
-            </div>
-            <span className="font-bold text-xl tracking-tight">AnimeBlog</span>
+      <IntegratedNav
+        currentApp="anime"
+        appName="AnimeBlog"
+        appIcon={
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl">
+            A
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="/" className="transition-colors hover:text-primary">Home</Link>
-            <Link href="#" className="transition-colors hover:text-primary">Reviews</Link>
-            <Link href="#" className="transition-colors hover:text-primary">Recommendations</Link>
-            <Link href="#" className="transition-colors hover:text-primary">News</Link>
-          </nav>
-          {/* <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="hidden sm:flex">
-              Sign In
-            </Button>
-            <Button size="sm">Subscribe</Button>
-          </div> */}
-        </div>
-      </header>
+        }
+        localLinks={[
+          { href: "/", label: "Home" },
+          { href: "#", label: "Reviews" },
+          { href: "#", label: "Recommendations" },
+          { href: "#", label: "News" }
+        ]}
+      />
+
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -271,56 +267,7 @@ export default function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 px-4 bg-background border-t">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-purple-600 rounded-md flex items-center justify-center text-white font-bold text-sm">
-                    A
-                  </div>
-                  <span className="font-bold text-lg">AnimeBlog</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Your ultimate destination for anime reviews, recommendations, and insights.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-4">Content</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><Link href="#" className="hover:text-foreground">Reviews</Link></li>
-                  <li><Link href="#" className="hover:text-foreground">Recommendations</Link></li>
-                  <li><Link href="#" className="hover:text-foreground">News</Link></li>
-                  <li><Link href="#" className="hover:text-foreground">Season Guides</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-4">Company</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><Link href="/about" className="hover:text-foreground">About Us</Link></li>
-                  <li><Link href="/contact" className="hover:text-foreground">Contact</Link></li>
-                  <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
-                  <li><Link href="/terms" className="hover:text-foreground">Terms of Service</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-4">Social</h3>
-                <div className="flex gap-4">
-                  <Button variant="ghost" size="icon" className="h-9 w-9">
-                    <Twitter className="h-4 w-4" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="h-9 w-9">
-                    <Github className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <Separator className="mb-8" />
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-              <p>© 2025 AnimeBlog. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+        <CrossAppFooter />
       </main>
     </div>
   );

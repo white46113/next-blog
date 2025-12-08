@@ -1,0 +1,189 @@
+import React from 'react';
+
+// WeebCoder Dashboard React component (single-file)
+// - Uses Tailwind CSS classes for styling (no additional imports required)
+// - Default export a React component that can be used in a Next.js or CRA app
+// - Replace the `RECENT` arrays with real data or wire up fetch calls to your APIs/sitemaps
+// - Followup: if you want, I can convert this into a full Next.js page with server-side
+//   sitemap fetching and a sitemap-index generator.
+
+export default function WeebCoderDashboard() {
+  const ANIME = {
+    title: 'Anime Zone',
+    description:
+      'Reviews, top lists, genre primers and recommendations. Discover new shows and curated lists for 2025.' ,
+    url: 'https://anime.weebcoder.com',
+    cta: 'Visit Anime',
+    recent: [
+      { title: 'Top 10 Anime 2025', url: 'https://anime.weebcoder.com/posts/top-10-anime-2025' },
+      { title: 'Best Anime Like Solo Leveling', url: 'https://anime.weebcoder.com/posts/best-anime-like-solo-leveling' },
+      { title: 'Romance Anime Picks', url: 'https://anime.weebcoder.com/posts/best-romance-anime' }
+    ]
+  };
+
+  const TECH = {
+    title: 'Tech Zone',
+    description: 'Practical how-tos and troubleshooting for Android and Windows users.',
+    url: 'https://tech.weebcoder.com',
+    cta: 'Visit Tech',
+    recent: [
+      { title: 'How to Speed Up Your Phone', url: 'https://tech.weebcoder.com/articles/how-to-speed-up-your-phone' },
+      { title: 'Android Storage Guide', url: 'https://tech.weebcoder.com/articles/android-storage-guide' },
+      { title: 'Windows 11 Guide', url: 'https://tech.weebcoder.com/articles/windows-11-guide' }
+    ]
+  };
+
+  const TOOLS = {
+    title: 'Tools Zone',
+    description: 'Free converters, calculators and utilities — instant, private and easy-to-use.',
+    url: 'https://tools.weebcoder.com',
+    cta: 'Try Tools',
+    recent: [
+      { title: 'PDF to Image', url: 'https://tools.weebcoder.com/tools/pdf-to-image' },
+      { title: 'JPG to PDF', url: 'https://tools.weebcoder.com/tools/jpg-to-pdf' },
+      { title: 'BMI Calculator', url: 'https://tools.weebcoder.com/tools/bmi-calculator' }
+    ]
+  };
+
+  const HUB_LINKS = [ANIME, TECH, TOOLS];
+
+  return (
+    <div className="min-h-screen bg-gray-50 text-slate-900 p-6 lg:p-12">
+      <header className="max-w-6xl mx-auto mb-8">
+        <div className="flex items-center justify-between gap-6">
+          <div>
+            <h1 className="text-3xl lg:text-4xl font-extrabold">WeebCoder Dashboard</h1>
+            <p className="mt-2 text-slate-600">Your hub for Anime, Tech guides and Free tools — quick links and latest updates.</p>
+          </div>
+          <div className="text-right">
+            <a
+              href="/sitemap.xml"
+              className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700"
+            >
+              Sitemap (root)
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto grid gap-8">
+        {/* Feature cards for subdomains */}
+        <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {HUB_LINKS.map((zone) => (
+            <article
+              key={zone.url}
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-xl font-semibold">{zone.title}</h2>
+                  <p className="mt-2 text-slate-600 text-sm">{zone.description}</p>
+                </div>
+                <div className="flex-shrink-0 self-center">
+                  <a
+                    href={zone.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-3 py-2 bg-slate-100 rounded-lg text-sm"
+                  >
+                    {zone.cta}
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-sm font-medium text-slate-700">Recent</h3>
+                <ul className="mt-2 space-y-2">
+                  {zone.recent.map((post) => (
+                    <li key={post.url}>
+                      <a
+                        href={post.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-indigo-600 hover:underline"
+                      >
+                        {post.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </article>
+          ))}
+        </section>
+
+        {/* Quick actions */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 shadow-md">
+            <h3 className="font-semibold">Search Console / Indexing</h3>
+            <p className="mt-2 text-sm text-slate-600">Quick actions you can run:</p>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>• Resubmit sitemap at <code className="px-1 py-0.5 bg-slate-100 rounded">/sitemap.xml</code></li>
+              <li>• Request indexing for important URLs</li>
+              <li>• Use "Test Live URL" for sitemap and example posts</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 shadow-md">
+            <h3 className="font-semibold">Internal Link Builder</h3>
+            <p className="mt-2 text-sm text-slate-600">Ideas to strengthen crawl signals:</p>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>• Add a "Hub" or category block to top-level pages</li>
+              <li>• Add "Related posts" lists under every article</li>
+              <li>• Cross-link tools from tech articles where applicable</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 shadow-md">
+            <h3 className="font-semibold">Social & Profiles</h3>
+            <p className="mt-2 text-sm text-slate-600">Quick profile links to create and paste bios:</p>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>• Twitter / X: <a href="#" className="text-indigo-600">create profile</a></li>
+              <li>• Reddit: <a href="#" className="text-indigo-600">create profile</a></li>
+              <li>• Medium / LinkedIn / Facebook / Instagram / Pinterest</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Recent across all zones */}
+        <section className="bg-white rounded-2xl p-6 shadow-md">
+          <h3 className="text-lg font-semibold">Latest from WeebCoder</h3>
+          <p className="text-sm text-slate-600 mt-2">A combined recent list from all subdomains (replace with live data).</p>
+
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[...ANIME.recent, ...TECH.recent, ...TOOLS.recent].map((item) => (
+              <a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-3 bg-slate-50 rounded-lg border border-slate-100 hover:shadow"
+              >
+                <h4 className="text-sm font-medium text-slate-800">{item.title}</h4>
+                <p className="text-xs text-slate-500 mt-1">{new URL(item.url).hostname}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* About and footer */}
+        <footer className="text-sm text-slate-600 mt-6">
+          <div className="bg-white rounded-2xl p-6 shadow-md">
+            <h3 className="font-semibold">About WeebCoder</h3>
+            <p className="mt-2">WeebCoder covers anime reviews and recommendations, practical tech tutorials, and free online tools. This dashboard centralizes links to all subdomains to improve navigation and SEO. Use this page as your hub and include it in your sitemap.</p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a href="https://weebcoder.com/sitemap.xml" className="text-xs px-3 py-1 bg-slate-100 rounded">Root sitemap</a>
+              <a href="https://anime.weebcoder.com/sitemap.xml" className="text-xs px-3 py-1 bg-slate-100 rounded">Anime sitemap</a>
+              <a href="https://tech.weebcoder.com/sitemap.xml" className="text-xs px-3 py-1 bg-slate-100 rounded">Tech sitemap</a>
+              <a href="https://tools.weebcoder.com/sitemap.xml" className="text-xs px-3 py-1 bg-slate-100 rounded">Tools sitemap</a>
+            </div>
+
+            <p className="mt-4 text-xs text-slate-500">Tip: Add this page to your Search Console as the canonical root hub page for weebcoder.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}
