@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
 import { getArticleBySlug } from "@/lib/articles";
 import { Separator } from "@/components/ui/separator";
+import RelatedArticles from "@/components/RelatedArticles";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
     const article = getArticleBySlug(params.slug);
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const url = `https://tech.weebcoder.com/articles/${params.slug}`;
 
     return {
-        title: `${article.title} | Tech Blog`,
+        title: article.title,
         description: article.description,
         alternates: {
             canonical: url,
@@ -167,6 +168,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 <ArticleComponent />
+
+                {/* Related Articles */}
+                <RelatedArticles currentSlug={params.slug} category={article.category} />
 
                 {/* Navigation */}
                 <div className="flex items-center justify-between mt-12">

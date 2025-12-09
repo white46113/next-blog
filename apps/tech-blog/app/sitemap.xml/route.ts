@@ -1,5 +1,12 @@
 import { articles } from '../../lib/articles';
 
+// Helper function to parse article dates consistently
+function parseArticleDate(dateString: string): Date {
+    // Parse dates like "January 10, 2025" or "December 7, 2025"
+    const date = new Date(dateString);
+    return isNaN(date.getTime()) ? new Date() : date;
+}
+
 export function GET() {
     const currentDate = new Date().toISOString();
 
@@ -54,12 +61,17 @@ export function GET() {
         }
     ];
 
-    const articlePages = Object.keys(articles).map((slug) => ({
-        url: `https://tech.weebcoder.com/articles/${slug}`,
-        lastmod: articles[slug as keyof typeof articles].date ? new Date(articles[slug as keyof typeof articles].date).toISOString() : currentDate,
-        changefreq: 'weekly',
-        priority: '0.9'
-    }));
+    const articlePages = Object.keys(articles).map((slug) => {
+        const article = articles[slug as keyof typeof articles];
+        const articleDate = article.date ? parseArticleDate(article.date).toISOString() : currentDate;
+
+        return {
+            url: `https://tech.weebcoder.com/articles/${slug}`,
+            lastmod: articleDate,
+            changefreq: 'monthly',
+            priority: '0.9'
+        };
+    });
 
     const pages = [...staticPages, ...articlePages];
 
@@ -80,7 +92,7 @@ ${pages
     return new Response(sitemap, {
         headers: {
             'Content-Type': 'application/xml',
-            'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+            'Cache-Control': 'public, max-age=1800, s-maxage=3600',
         },
     });
 }

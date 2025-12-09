@@ -126,41 +126,6 @@ export default function AndroidStorageGuide() {
 
     return (
         <div className="space-y-12">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@graph": [
-                        {
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [
-                                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tech.weebcoder.com/" },
-                                { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://tech.weebcoder.com/articles" },
-                                { "@type": "ListItem", "position": 3, "name": "Android Storage Guide", "item": "https://tech.weebcoder.com/articles/android-storage-guide" }
-                            ]
-                        },
-                        {
-                            "@type": "Article",
-                            "headline": "The Modern Android Storage Crisis: 15 Proven Ways to Reclaim Space",
-                            "description": "Struggling with full storage? Discover 15 proven methods to reclaim 5-50GB of space on your Android device without losing important data.",
-                            "image": "https://tech.weebcoder.com/android-storage-guide.jpg",
-                            "author": { "@type": "Person", "name": "Tech Team", "url": "https://tech.weebcoder.com/authors/tech-team" },
-                            "publisher": { "@type": "Organization", "name": "TechBlog", "logo": { "@type": "ImageObject", "url": "https://tech.weebcoder.com/logo.png" } },
-                            "datePublished": "2025-01-28",
-                            "dateModified": "2025-01-28",
-                            "mainEntityOfPage": "https://tech.weebcoder.com/articles/android-storage-guide"
-                        },
-                        {
-                            "@type": "FAQPage",
-                            "mainEntity": faqs.map(faq => ({
-                                "@type": "Question",
-                                "name": faq.q,
-                                "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-                            }))
-                        }
-                    ]
-                })
-            }} />
-
             {/* Header */}
             <div className="space-y-4">
                 <Badge className="bg-green-600 hover:bg-green-700">Android Optimization</Badge>
