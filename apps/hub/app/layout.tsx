@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "WeebCoder - Your Hub for Anime, Tech & Tools",
+    alternates: {
+        canonical: 'https://weebcoder.com',
+    },
     description: "Discover anime reviews, tech tutorials, and free online tools. Your one-stop destination for entertainment, learning, and productivity.",
     keywords: ["anime", "tech tutorials", "online tools", "anime reviews", "technology", "free tools"],
     authors: [{ name: "WeebCoder" }],
