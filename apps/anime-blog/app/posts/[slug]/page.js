@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const url = `https://anime.weebcoder.com/posts/${params.slug}`;
 
   return {
-    title: `${post.title} | Anime Blog`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: url,

@@ -47,7 +47,7 @@ export function GET() {
   const postPages = Object.keys(posts).map((slug) => ({
     url: `https://anime.weebcoder.com/posts/${slug}`,
     lastmod: posts[slug].date ? new Date(posts[slug].date).toISOString() : currentDate,
-    changefreq: 'weekly',
+    changefreq: 'monthly',
     priority: '0.9'
   }));
 
@@ -70,7 +70,7 @@ ${pages
   return new Response(sitemap, {
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'Cache-Control': 'public, max-age=1800, s-maxage=3600',
     },
   });
 }

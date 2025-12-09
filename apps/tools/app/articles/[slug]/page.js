@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     const imageUrl = 'https://tools.weebcoder.com/og-image.png';
 
     return {
-        title: `${article.title} | Tools`,
+        title: article.title,
         description: article.description,
         alternates: {
             canonical: articleUrl,

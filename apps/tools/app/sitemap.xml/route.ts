@@ -89,7 +89,7 @@ export function GET() {
         return {
             url: `https://tools.weebcoder.com/articles/${slug}`,
             lastmod: article.date ? new Date(article.date).toISOString() : currentDate,
-            changefreq: 'weekly',
+            changefreq: 'monthly',
             priority: '0.9'
         };
     });
@@ -113,7 +113,7 @@ ${pages
     return new Response(sitemap, {
         headers: {
             'Content-Type': 'application/xml',
-            'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+            'Cache-Control': 'public, max-age=1800, s-maxage=3600',
         },
     });
 }

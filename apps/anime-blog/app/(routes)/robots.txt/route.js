@@ -5,8 +5,7 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 
-Sitemap: https://anime.weebcoder.com/sitemap.xml
-Crawl-delay: 1`;
+Sitemap: https://anime.weebcoder.com/sitemap.xml`;
 
   return new Response(robotsTxt, {
     headers: {
