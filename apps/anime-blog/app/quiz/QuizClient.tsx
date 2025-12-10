@@ -182,6 +182,25 @@ export default function QuizClient() {
         setTimeout(() => setStep(nextStep), 220);
     }
 
+    function pickUniqueRecs(dominantPool : any, runnerPool : any) {
+  // Combine pools with weighted importance
+        const combined = [
+            ...dominantPool, 
+            ...dominantPool,  // Weighted more heavily
+            ...runnerPool
+        ];
+
+        // Shuffle once
+        const shuffled = shuffle(combined);
+
+        // Remove duplicates while preserving order
+        const unique = Array.from(new Set(shuffled));
+
+        // Get final 3
+        return unique.slice(0, 3);
+        }
+
+
     function computeResult() {
         const sorted = Object.entries(weights).sort((a, b) => b[1] - a[1]);
         const top = sorted[0][0] as ArchetypeKey;
@@ -195,7 +214,9 @@ export default function QuizClient() {
         const poolRunner = RECS_POOL[runnerUp];
 
 
-        const picks = shuffle(poolDominant).slice(0, 2).concat(shuffle(poolRunner).slice(0, 1), shuffle(poolDominant).slice(2, 3));
+        // const picks = shuffle(poolDominant).slice(0, 2).concat(shuffle(poolRunner).slice(0, 1), shuffle(poolDominant).slice(2, 3));
+        const picks = pickUniqueRecs(poolDominant, poolRunner);
+        console.log('picks ', picks)
         setFinalRecs(shuffle(picks).map((p) => p.title));
     }
 
