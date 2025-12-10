@@ -1,112 +1,281 @@
+import { motion } from "framer-motion";
+import { Sparkles, Play, Film } from "lucide-react";
 
-Best Anime Like Solo Leveling: OP Protagonists & Unique Leveling Systems (2025)
-If you loved Solo Leveling for its OP protagonist, satisfying power progression, and epic battles, you’re in the right place. Below, we’ve curated the best anime that deliver the same thrills—whether it’s leveling up, dominating enemies, or exploring dark fantasy worlds.
+import React, { useState, useEffect } from "react";
 
-1. Anime with OP Protagonists & Leveling Systems
-These series perfectly blend the zero-to-hero journey with game-like progression, just like Solo Leveling:
-A. The Rising of the Shield Hero
+// Anime Personality Quiz - Single-file React component for Next.js + Tailwind
+// Put this file in `pages/quiz.jsx` (Next.js pages dir) or `app/quiz/page.jsx` if using the app router.
+// Tailwind CSS should already be set up in your project.
 
-Why it’s similar: Naofumi starts as a shunned hero but levels up his shield skills to become unstoppable. The anime features betrayal, redemption, and a unique class system—just like Jin-Woo’s journey.
-Unique twist: Naofumi’s rapport system lets him bond with monsters, adding a fresh layer to power progression.
-Where to watch: Crunchyroll, Netflix
-Fan favorite: “The moment Naofumi unlocks his Wrath Shield is as satisfying as Jin-Woo’s first shadow army summon!” dexerto.com+1
-B. Mushoku Tensei: Jobless Reincarnation
+const QUESTIONS = [
+  {
+    id: 1,
+    q: "What's your ideal weekend plan?",
+    options: [
+      { id: "a", t: "shonen", text: "Train hard, binge action-packed shows" },
+      { id: "b", t: "slice", text: "Relax with cozy slice-of-life anime" },
+      { id: "c", t: "isekai", text: "Start a new adventure (game or story)" },
+      { id: "d", t: "psy", text: "Watch something mind-bending and deep" },
+    ],
+  },
+  {
+    id: 2,
+    q: "Pick a favorite color palette:",
+    options: [
+      { id: "a", t: "slice", text: "Soft pastels" },
+      { id: "b", t: "shonen", text: "Bold primary colors" },
+      { id: "c", t: "psy", text: "Muted, moody tones" },
+      { id: "d", t: "isekai", text: "Vibrant fantasy hues" },
+    ],
+  },
+  {
+    id: 3,
+    q: "What's the best protagonist trait?",
+    options: [
+      { id: "a", t: "shonen", text: "Determination and growth" },
+      { id: "b", t: "psy", text: "Complex, flawed mind" },
+      { id: "c", t: "slice", text: "Relatable and chill" },
+      { id: "d", t: "isekai", text: "Quirky outsider vibe" },
+    ],
+  },
+  {
+    id: 4,
+    q: "Which soundtrack would you pick?",
+    options: [
+      { id: "a", t: "shonen", text: "Pumped-up battle themes" },
+      { id: "b", t: "slice", text: "Mellow acoustic" },
+      { id: "c", t: "psy", text: "Haunting ambient" },
+      { id: "d", t: "isekai", text: "Epic orchestral" },
+    ],
+  },
+  {
+    id: 5,
+    q: "You find a mysterious item — it probably: ",
+    options: [
+      { id: "a", t: "isekai", text: "Teleports you to another world" },
+      { id: "b", t: "shonen", text: "Gives a power-up" },
+      { id: "c", t: "slice", text: "Reminds you of home" },
+      { id: "d", t: "psy", text: "Unravels a secret about you" },
+    ],
+  },
+];
 
-Why it’s similar: Rudeus starts as a weak child but grinds his magic and swordsmanship to godlike levels. The magic system is deep, and his growth is earned through hard work—just like Jin-Woo’s training.
-Unique twist: Reincarnation and lifelong skill mastery make his power feel realistic.
-Where to watch: Crunchyroll
-Fan favorite: “Rudeus’ Water God Style swordplay is as iconic as Jin-Woo’s Shadow Extraction!” theflagshipeclipse.com+1
-C. Arifureta: From Commonplace to World’s Strongest
+const RESULTS = {
+  shonen: {
+    title: "The Shonen Spirit",
+    desc: "You love hype, growth, and big emotional wins. You enjoy series where characters train, fail, learn, and then come back stronger.",
+    recs: ["My Hero Academia", "Naruto", "Demon Slayer"],
+  },
+  slice: {
+    title: "Cozy Slice-of-Life",
+    desc: "You appreciate small moments, warm character interactions, and soothing worldbuilding. You’re here for feelings and comfort.",
+    recs: ["Barakamon", "March Comes in Like a Lion", "K-On!"],
+  },
+  isekai: {
+    title: "The Adventurer (Isekai)",
+    desc: "You dream of other worlds. Escapism, exploration, and quirky fantasy settings make your day.",
+    recs: ["Re:Zero", "That Time I Got Reincarnated as a Slime", "Konosuba"],
+  },
+  psy: {
+    title: "Psychological / Mind-bending",
+    desc: "You enjoy twists, unreliable narrators, and shows that leave you thinking long after they end.",
+    recs: ["Paranoia Agent", "Monster", "Serial Experiments Lain"],
+  },
+};
 
-Why it’s similar: Hajime Nagumo is betrayed and left for dead, but he unlocks OP transmutation magic and builds a harem of powerful allies. His ruthless, strategic fights mirror Jin-Woo’s tactical battles.
-Unique twist: Hajime’s custom weapons and alchemy set him apart from typical isekai heroes.
-Where to watch: Crunchyroll, Funimation
-Fan favorite: “Hajime’s Orichalcum armor and Euhrydale are as cool as Jin-Woo’s Demon King’s Castle!” theflagshipeclipse.com+1
-D. The Misfit of Demon King Academy
+// --- QUIZ BUNDLE SUPPORT ADDED ---
+// This file now includes multiple quizzes in one bundle.
+// Quizzes:
+// 1. Personality Quiz (existing)
+// 2. Genre Quiz
+// 3. "What To Watch Next" Quiz
+// A selector screen is added so users can pick which quiz to take.
 
-Why it’s similar: Anos Voldigoad is a reincarnated demon king who’s OP from the start but still faces challenges. His magic and demonic powers are as overwhelming as Jin-Woo’s shadow army.
-Unique twist: Anos rebuilds his demon kingdom while dealing with political intrigue.
-Where to watch: Crunchyroll
-Fan favorite: “Anos’ Gigant Impact spell is the kind of over-the-top power fans love!” theflagshipeclipse.com
-E. Berserk of Gluttony
+export default function QuizBundle() {
+  const [step, setStep] = useState(0); // 0 = intro, 1..n = questions, n+1 = result
+  const [answers, setAnswers] = useState({});
+  const [scores, setScores] = useState({ shonen: 0, slice: 0, isekai: 0, psy: 0 });
+  const [resultKey, setResultKey] = useState(null);
 
-Why it’s similar: Fate starts weak but gains the Gluttony skill, letting him devour enemies to level up—just like Jin-Woo’s system. The dark, brutal world and power progression are major draws.
-Unique twist: The skill system is tied to sin and sacrifice, adding moral complexity.
-Where to watch: Crunchyroll
-Fan favorite: “Fate’s Gluttony evolution is as addictive as Jin-Woo’s System messages!” cbr.com
-F. Shangri-La Frontier
+  useEffect(() => {
+    // load progress from localStorage
+    try {
+      const saved = localStorage.getItem("anime_quiz_progress");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.step) setStep(parsed.step);
+        if (parsed.answers) setAnswers(parsed.answers);
+        if (parsed.scores) setScores(parsed.scores);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
-Why it’s similar: Sunraku traps himself in a VR game and grinds to become the strongest player. The game mechanics and strategic battles feel like Solo Leveling’s dungeon raids.
-Unique twist: Sunraku breaks the game’s meta, making every fight creative.
-Where to watch: Crunchyroll
-Fan favorite: “Sunraku’s ‘I’ll solo this boss’ energy is pure Jin-Woo vibes!” gamerant.com
+  useEffect(() => {
+    // persist progress
+    const payload = { step, answers, scores };
+    try {
+      localStorage.setItem("anime_quiz_progress", JSON.stringify(payload));
+    } catch (e) {}
+  }, [step, answers, scores]);
 
-2. Dark Fantasy Anime with Action & Leveling (2025 Picks)
-For fans who love Solo Leveling’s dark tone, high stakes, and brutal battles, these 2025 dark fantasy anime are must-watches:
-A. Gachiakuta
+  function startQuiz() {
+    setStep(1);
+    setAnswers({});
+    setScores({ shonen: 0, slice: 0, isekai: 0, psy: 0 });
+    setResultKey(null);
+  }
 
-Why it’s similar: Set in a dystopian floating city, Rudo fights monsters and uncovers conspiracies—just like Jin-Woo’s hunter world. The action is visceral, and the power system is unique.
-Unique twist: Graffiti-inspired visuals and urban rebellion themes make it stand out.
-Where to watch: Crunchyroll (Summer 2025)
-Fan favorite: “Gachiakuta’s monster designs are as terrifying as Solo Leveling’s Ant Monarch!” geekycritic.com+1
-B. Tougen Anki
+  function selectOption(questionId, option) {
+    setAnswers((prev) => ({ ...prev, [questionId]: option.id }));
+    // update scores
+    setScores((prev) => {
+      const next = { ...prev };
+      next[option.t] = (next[option.t] || 0) + 1;
+      return next;
+    });
 
-Why it’s similar: Shiki discovers his Oni powers and battles rival clans in a blood-soaked world. The power progression and dark atmosphere are reminiscent of Solo Leveling’s later arcs.
-Unique twist: Oni transformation mechanics and clan politics add depth.
-Where to watch: Crunchyroll (July 2025)
-Fan favorite: “Shiki’s Oni form is as intimidating as Jin-Woo’s Demon King mode!” ranker.com
-C. Chainsaw Man
+    // move to next step after a tiny delay for UX
+    const nextStep = questionId < QUESTIONS.length ? step + 1 : QUESTIONS.length + 1;
+    setTimeout(() => setStep(nextStep), 250);
+  }
 
-Why it’s similar: Denji starts as a nobody but gains devil powers and fights for survival. The brutal action and power-ups are Solo Leveling levels of intense.
-Unique twist: Denji’s Chainsaw Devil form is as iconic as Jin-Woo’s Shadow Monarch.
-Where to watch: Crunchyroll
-Fan favorite: “Denji’s ‘I just want a normal life’ struggle hits as hard as Jin-Woo’s early hunter days!” dexerto.com+1
-D. Jujutsu Kaisen
+  function computeResult() {
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const top = sorted[0][0];
+    setResultKey(top);
+  }
 
-Why it’s similar: Yuji Itadori swallows a cursed object and gains OP powers, but must train and level up to survive. The power system is well-defined, and the battles are visceral.
-Unique twist: Cursed energy mechanics and team dynamics set it apart.
-Where to watch: Crunchyroll, HBO Max
-Fan favorite: “Yuji’s Divergent Fist is as hype as Jin-Woo’s Ashborn powers!” dexerto.com
+  useEffect(() => {
+    if (step === QUESTIONS.length + 1) {
+      computeResult();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
-3. Unique Power Progression Systems (Like Solo Leveling’s System)
-These anime feature innovative power systems that make progression addictive and rewarding:
-A. Log Horizon
+  function resetQuiz() {
+    localStorage.removeItem("anime_quiz_progress");
+    startQuiz();
+  }
 
-Why it’s similar: Players are trapped in a game world and must level up classes and skills to survive. The strategy and world-building are top-tier.
-Unique twist: Guild politics and economy play a huge role.
-Where to watch: Hulu, Crunchyroll gamerant.com+1
-B. DanMachi (Is It Wrong to Try to Pick Up Girls in a Dungeon?)
+  function shareResult() {
+    if (!resultKey) return;
+    const text = `I got ${RESULTS[resultKey].title} on the Anime Personality Quiz — try it: ${typeof window !== 'undefined' ? window.location.href : ''}`;
+    if (navigator.share) {
+      navigator.share({ text }).catch(() => {});
+    } else {
+      navigator.clipboard?.writeText(text).then(() => alert("Result copied to clipboard!"));
+    }
+  }
 
-Why it’s similar: Bell Cranel starts as a weak adventurer but levels up through dungeon crawling. The RPG mechanics and goddess blessings are a fun twist.
-Unique twist: Familia (guild) system and romantic subplots.
-Where to watch: HIDIVE, Crunchyroll anime-planet.com
-C. The Unwanted Undead Adventurer
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 p-6 flex items-center justify-center">
+      <div className="max-w-4xl w-full bg-gray-900/60 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
+        {step === -1 && (
+          <div>
+            <h1 className="text-3xl font-bold mb-4">Anime Quiz Center</h1>
+            <p className="mb-6 text-gray-300">Choose a quiz to get started:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(0)} className="p-4 rounded-xl bg-indigo-600 hover:bg-indigo-500">Personality Quiz</button>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(-2)} className="p-4 rounded-xl bg-gray-700 hover:bg-gray-600">Genre Quiz</button>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(-3)} className="p-4 rounded-xl bg-gray-700 hover:bg-gray-600">What To Watch Next</button>
+            </div>
+          </div>
+        )}
 
-Why it’s similar: Rentt Faina becomes an undead but retains his adventurer skills, forcing him to adapt and level up in a cruel world.
-Unique twist: Undead mechanics and survival horror elements.
-Where to watch: Crunchyroll ranker.com
+        {/* Personality Quiz Original UI Follows */
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 p-6 flex items-center justify-center">
+      <div className="max-w-3xl w-full bg-gray-900/60 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
+        <h1 className="text-3xl font-bold mb-2">Which Anime Character Type Are You?</h1>
+        <p className="mb-6 text-gray-300">A quick, friendly quiz to match you with an anime vibe. No accounts, fully client-side.</p>
 
-4. Why These Anime Are Perfect for Solo Leveling Fans
+        {step === 0 && (
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="font-semibold">Why take it?</h3>
+                <ul className="list-disc list-inside text-gray-300">
+                  <li>Fun, shareable results</li>
+                  <li>Lightweight and fast — everything runs in your browser</li>
+                  <li>Easy to expand with more questions</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="font-semibold">How it works</h3>
+                <p className="text-gray-300">Pick the option that fits best. At the end, you'll get a matching "type" with recommended anime.</p>
+              </div>
+            </div>
 
-OP Protagonists: Each series features a main character who starts weak but becomes a powerhouse—just like Jin-Woo.
-Leveling Systems: Whether it’s magic, skills, or game mechanics, progression is satisfying and well-defined.
-Dark Fantasy & Action: For fans of Solo Leveling’s mature themes and brutal fights, these picks deliver.
-Unique Twists: No two power systems are the same, keeping the experience fresh.
+            <div className="flex gap-3">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={startQuiz} className="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold">Start Quiz</button>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { setStep(QUESTIONS.length + 1); }} className="px-5 py-3 rounded-xl bg-gray-700 hover:bg-gray-600">Surprise me (fast)</button>
+            </div>
+          </div>
+        )}
 
-5. Where to Watch These Anime?
+        {step >= 1 && step <= QUESTIONS.length && (
+          <div>
+            <div className="mb-4 flex items-center justify-between">
+              <div className="text-sm text-gray-400">Question {step} of {QUESTIONS.length}</div>
+              <div className="text-sm text-gray-400">Progress: {Object.keys(answers).length}/{QUESTIONS.length}</div>
+            </div>
 
-Crunchyroll: Most titles (The Rising of the Shield Hero, Mushoku Tensei, Arifureta, Chainsaw Man, Jujutsu Kaisen, Gachiakuta, Tougen Anki)
-Netflix: Mushoku Tensei, Chainsaw Man
-Hulu: Log Horizon
-Funimation: Arifureta, Overlord
+            <div className="bg-gray-800 p-6 rounded-xl">
+              <h2 className="text-xl font-semibold mb-4">{QUESTIONS[step - 1].q}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {QUESTIONS[step - 1].options.map((opt) => (
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                    key={opt.id}
+                    onClick={() => selectOption(QUESTIONS[step - 1].id, opt)}
+                    className="text-left p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition"
+                  >
+                    {opt.text}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-6. FAQ: Your Questions Answered
-Is there a Solo Leveling Season 2?
-Yes! Season 2 premiered in 2025, continuing Jin-Woo’s journey with even darker themes and bigger battles geekycritic.com+2.
-What is the best anime with a leveling system?
-Mushoku Tensei and The Rising of the Shield Hero are fan favorites for their deep progression systems gamerant.com+2.
-Are there any new dark fantasy anime in 2025?
-Absolutely! Gachiakuta and Tougen Anki are 2025’s standout dark fantasy anime, blending action, leveling, and mature themes geekycritic.com+1.
+            <div className="mt-4 flex justify-between items-center">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { if (step > 1) setStep(step - 1); }} className="px-4 py-2 bg-gray-700 rounded-lg">Back</button>
+              <div className="text-gray-400">Tip: Your first instinct is usually best.</div>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { setStep(QUESTIONS.length + 1); }} className="px-4 py-2 bg-gray-700 rounded-lg">Finish early</button>
+            </div>
+          </div>
+        )}
 
-7. Conclusion: Which Anime Will You Watch Next?
-Solo Leveling set the bar high, but these anime deliver the same thrills—whether you’re here for OP protagonists, leveling systems, or dark fantasy action.
+        {step === QUESTIONS.length + 1 && resultKey && (
+          <div className="mt-6">
+            <div className="bg-gray-800 p-6 rounded-xl">
+              <h2 className="text-2xl font-bold mb-2">{RESULTS[resultKey].title}</h2>
+              <p className="text-gray-300 mb-4">{RESULTS[resultKey].desc}</p>
+              <h3 className="font-semibold">Recommended to watch:</h3>
+              <ul className="list-disc list-inside mb-4">
+                {RESULTS[resultKey].recs.map((r) => <li key={r}>{r}</li>)}
+              </ul>
+
+              <div className="flex gap-3">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={shareResult} className="px-4 py-2 bg-indigo-600 rounded-lg">Share Result</button>
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={resetQuiz} className="px-4 py-2 bg-gray-700 rounded-lg">Retake</button>
+                <a href="/" className="px-4 py-2 bg-gray-700 rounded-lg">Back to Home</a>
+              </div>
+            </div>
+
+            <div className="mt-4 p-4 bg-gray-800 rounded-lg">
+              <h4 className="font-semibold mb-2">Why this result?</h4>
+              <p className="text-gray-300">We tally your answers to find which vibe you chose most. You can expand this logic to weight answers differently or add tie-breakers.</p>
+            </div>
+          </div>
+        )}
+
+        {step === QUESTIONS.length + 1 && !resultKey && (
+          <div className="mt-6 p-6 bg-gray-800 rounded-xl">
+            <p className="text-gray-300">Calculating result...</p>
+          </div>
+        )}
+
+        <div className="mt-6 text-sm text-gray-500">All quiz data is stored in the browser only. Customize questions & results in the component (QUESTIONS & RESULTS).</div>
+      </div>
+    </div>
+  );
+}
