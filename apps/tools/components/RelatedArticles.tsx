@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { articles } from '@/lib/articles';
-import { Shield, Zap, HardDrive, Monitor, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 interface RelatedArticle {
     slug: string;
@@ -11,58 +11,46 @@ interface RelatedArticle {
     readTime: string;
 }
 
-// Helper function to get category icon
-function getCategoryIcon(category: string) {
-    const icons: Record<string, any> = {
-        'Security': Shield,
-        'Performance': Zap,
-        'Storage': HardDrive,
-        'Windows': Monitor,
-    };
-    const Icon = icons[category] || Monitor;
-    return <Icon className="h-4 w-4" />;
+// Helper function to determine category from article content
+function getArticleCategory(slug: string, title: string): string {
+    if (slug.includes('percentage') || title.includes('Percentage')) return 'Percentage';
+    if (slug.includes('loan') || slug.includes('emi')) return 'Finance';
+    if (slug.includes('gst') || slug.includes('vat')) return 'Tax';
+    return 'Calculator';
 }
 
 // Helper function to get category color
 function getCategoryColor(category: string): string {
     const colors: Record<string, string> = {
-        'Security': 'from-red-500 to-orange-500',
-        'Performance': 'from-yellow-500 to-amber-500',
-        'Storage': 'from-green-500 to-emerald-500',
-        'Windows': 'from-blue-500 to-cyan-500',
+        'Percentage': 'from-purple-500 to-pink-500',
+        'Finance': 'from-green-500 to-emerald-500',
+        'Tax': 'from-blue-500 to-cyan-500',
+        'Calculator': 'from-orange-500 to-amber-500',
     };
     return colors[category] || 'from-gray-500 to-slate-500';
 }
 
-export default function RelatedArticles({ currentSlug, category }: { currentSlug: string; category?: string }) {
+export default function RelatedArticles({ currentSlug }: { currentSlug: string }) {
     // Get related articles based on category or just get other articles
+    const currentArticle = articles[currentSlug as keyof typeof articles];
+    const currentCategory = currentArticle ? getArticleCategory(currentSlug, currentArticle.title) : '';
+
     const relatedArticles: RelatedArticle[] = Object.entries(articles)
         .filter(([slug]) => slug !== currentSlug)
         .map(([slug, article]) => ({
             slug,
             title: article.title,
             description: article.description,
-            category: article.category || 'Technology',
+            category: getArticleCategory(slug, article.title),
             readTime: article.readTime
         }))
-        .filter(article => !category || article.category === category)
+        // Prioritize same category
+        .sort((a, b) => {
+            if (a.category === currentCategory && b.category !== currentCategory) return -1;
+            if (a.category !== currentCategory && b.category === currentCategory) return 1;
+            return 0;
+        })
         .slice(0, 3);
-
-    // If we don't have enough related articles from the same category, add more from other categories
-    if (relatedArticles.length < 3) {
-        const additionalArticles = Object.entries(articles)
-            .filter(([slug]) => slug !== currentSlug && !relatedArticles.find(a => a.slug === slug))
-            .map(([slug, article]) => ({
-                slug,
-                title: article.title,
-                description: article.description,
-                category: article.category || 'Technology',
-                readTime: article.readTime
-            }))
-            .slice(0, 3 - relatedArticles.length);
-
-        relatedArticles.push(...additionalArticles);
-    }
 
     if (relatedArticles.length === 0) {
         return null;
@@ -71,11 +59,11 @@ export default function RelatedArticles({ currentSlug, category }: { currentSlug
     return (
         <div className="mt-16 space-y-6">
             <div className="border-t pt-8">
-                <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                    Related Articles
+                <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                    Related Guides & Tools
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                    Continue exploring tech guides and tutorials
+                    Continue learning with these helpful resources
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                     {relatedArticles.map((article) => {
@@ -85,21 +73,20 @@ export default function RelatedArticles({ currentSlug, category }: { currentSlug
                                 <Card className="h-full group cursor-pointer relative overflow-hidden
                                     bg-background/40 backdrop-blur-sm
                                     border-2 border-transparent
-                                    hover:border-blue-500/50
-                                    hover:shadow-xl hover:shadow-blue-500/10
+                                    hover:border-primary/50
+                                    hover:shadow-xl hover:shadow-primary/10
                                     transition-all duration-300 hover:scale-[1.02]
                                     before:absolute before:inset-0 before:rounded-lg
-                                    before:p-[2px] before:bg-gradient-to-br before:from-blue-500/20 before:to-cyan-600/20
+                                    before:p-[2px] before:bg-gradient-to-br before:from-primary/20 before:to-purple-600/20
                                     before:-z-10 before:opacity-0 hover:before:opacity-100 before:transition-opacity">
                                     <CardHeader>
                                         <div className="flex items-center gap-2 mb-3">
-                                            <span className={`text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1
+                                            <span className={`text-xs font-semibold px-3 py-1 rounded-full
                                                 bg-gradient-to-r ${gradientColor} text-white`}>
-                                                {getCategoryIcon(article.category)}
                                                 {article.category}
                                             </span>
                                         </div>
-                                        <CardTitle className="text-lg line-clamp-2 group-hover:text-blue-500 transition-colors">
+                                        <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
                                             {article.title}
                                         </CardTitle>
                                     </CardHeader>
@@ -108,11 +95,13 @@ export default function RelatedArticles({ currentSlug, category }: { currentSlug
                                             {article.description}
                                         </CardDescription>
                                         <div className="flex items-center justify-between text-sm text-muted-foreground pt-2 border-t">
-                                            <div className="flex items-center gap-1">
-                                                <Clock className="h-3.5 w-3.5" />
-                                                <span>{article.readTime}</span>
+                                            <div className="flex items-center gap-3">
+                                                <div className="flex items-center gap-1">
+                                                    <Clock className="h-3.5 w-3.5" />
+                                                    <span>{article.readTime}</span>
+                                                </div>
                                             </div>
-                                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform text-blue-500" />
+                                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform text-primary" />
                                         </div>
                                     </CardContent>
                                 </Card>

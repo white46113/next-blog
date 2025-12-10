@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/posts";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import RelatedPosts from "@/components/RelatedPosts";
+import CrossAppLinks from "@/components/CrossAppLinks";
+import PopularContent from "@/components/PopularContent";
 
 export async function generateMetadata({ params }) {
   const post = getPostBySlug(params.slug);
@@ -168,6 +171,15 @@ export default function PostPage({ params }) {
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <PostComponent />
+
+        {/* Related Posts */}
+        <RelatedPosts currentSlug={params.slug} category={post.category} />
+
+        {/* Cross-App Links */}
+        <CrossAppLinks />
+
+        {/* Popular Content */}
+        <PopularContent />
 
         {/* Navigation */}
         <div className="flex items-center justify-between mt-12">

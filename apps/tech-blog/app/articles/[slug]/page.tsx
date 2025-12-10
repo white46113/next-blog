@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getArticleBySlug } from "@/lib/articles";
 import { Separator } from "@/components/ui/separator";
 import RelatedArticles from "@/components/RelatedArticles";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
     const article = getArticleBySlug(params.slug);
@@ -171,6 +172,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
                 {/* Related Articles */}
                 <RelatedArticles currentSlug={params.slug} category={article.category} />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks currentApp="tech" />
 
                 {/* Navigation */}
                 <div className="flex items-center justify-between mt-12">

@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { getArticleBySlug } from "../../../lib/articles";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import RelatedArticles from "@/components/RelatedArticles";
+import CrossAppLinks from "@/components/CrossAppLinks";
+import PopularContent from "@/components/PopularContent";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
@@ -146,6 +149,15 @@ export default async function ArticlePage({ params }) {
                 <Separator className="my-8" />
 
                 <ArticleComponent />
+
+                {/* Related Articles */}
+                <RelatedArticles currentSlug={slug} />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks />
+
+                {/* Popular Content */}
+                <PopularContent />
 
                 {/* Navigation */}
                 <div className="flex items-center justify-between mt-12 pt-8 border-t">
