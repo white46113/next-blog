@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -252,6 +253,16 @@ export default function Windows11SpeedGuide() {
                 </div>
             </div>
 
+            {/* Hero Image */}
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border">
+                <Image
+                    src="/images/articles/windows-11-speed/hero.png"
+                    alt="Windows 11 Speed and Performance Optimization"
+                    fill
+                    className="object-cover"
+                />
+            </div>
+
             {/* Executive Summary */}
             <Card>
                 <CardHeader>
@@ -285,6 +296,14 @@ export default function Windows11SpeedGuide() {
                         <CardDescription>Before implementing fixes, identify what's slowing down your system</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                        <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-4 border">
+                            <Image
+                                src="/images/articles/windows-11-speed/task-manager.png"
+                                alt="Windows 11 Task Manager Performance Tab"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <div>
                             <h3 className="font-semibold text-lg mb-2">Task Manager Analysis</h3>
                             <ul className="space-y-2 ml-4">
@@ -379,6 +398,14 @@ export default function Windows11SpeedGuide() {
                     <TrendingUp className="h-8 w-8 text-primary" />
                     Chapter 4: Startup and Background Process Management
                 </h2>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border">
+                    <Image
+                        src="/images/articles/windows-11-speed/startup-apps.png"
+                        alt="Optimizing Startup Applications in Windows 11"
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 {startupOptimizations.map((optimization, idx) => (
                     <Card key={idx}>
                         <CardHeader>
@@ -408,6 +435,14 @@ export default function Windows11SpeedGuide() {
                     <HardDrive className="h-8 w-8 text-primary" />
                     Chapter 5: Storage Optimization Techniques
                 </h2>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border">
+                    <Image
+                        src="/images/articles/windows-11-speed/storage-sense.png"
+                        alt="Windows 11 Storage Sense Configuration"
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 {storageOptimizations.map((optimization, idx) => (
                     <Card key={idx}>
                         <CardHeader>
@@ -467,6 +502,14 @@ export default function Windows11SpeedGuide() {
                     <Wrench className="h-8 w-8 text-primary" />
                     Chapter 7: Hardware Upgrade Considerations
                 </h2>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border">
+                    <Image
+                        src="/images/articles/windows-11-speed/hardware-upgrade.png"
+                        alt="SSD and RAM Upgrade for Windows 11"
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 {hardwareUpgrades.map((upgrade, idx) => (
                     <Card key={idx}>
                         <CardHeader>
