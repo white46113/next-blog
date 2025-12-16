@@ -17,23 +17,12 @@ export function GET() {
             changefreq: 'daily',
             priority: '1.0'
         },
-        {
-            url: 'https://tech.weebcoder.com/blog',
-            lastmod: currentDate,
-            changefreq: 'daily',
-            priority: '0.9'
-        },
-        {
-            url: 'https://tech.weebcoder.com/tutorials',
-            lastmod: currentDate,
-            changefreq: 'weekly',
-            priority: '0.9'
-        },
+        // Removed /blog and /tutorials - empty "coming soon" pages hurt SEO
         {
             url: 'https://tech.weebcoder.com/articles',
             lastmod: currentDate,
             changefreq: 'weekly',
-            priority: '0.8'
+            priority: '0.9'
         },
         {
             url: 'https://tech.weebcoder.com/privacy',

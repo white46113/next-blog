@@ -8,7 +8,7 @@ export const posts = {
     'top-10-anime-2025': {
         title: 'Top 10 Anime to Watch in 2025 – The Ultimate Guide',
         description: 'From Attack on Titan: Legacy to Demon Slayer: Infinite Castle Arc, discover the must-watch anime series defining 2025.',
-        date: 'January 18, 2025',
+        date: 'November 18, 2024',
         readTime: '10 min read',
         author: 'Anime Blog Team',
         image: 'https://anime.weebcoder.com/og-image.jpg',
@@ -37,7 +37,7 @@ export const posts = {
     'best-anime-like-solo-leveling': {
         title: 'Best Anime Like Solo Leveling: OP Protagonists & Unique Leveling Systems (2025)',
         description: 'Discover the best anime similar to Solo Leveling featuring overpowered protagonists, satisfying power progression, and epic battles. From The Rising of the Shield Hero to Chainsaw Man, find your next obsession.',
-        date: 'December 4, 2025',
+        date: 'December 4, 2024',
         readTime: '12 min read',
         author: 'Anime Blog Team',
         image: 'https://anime.weebcoder.com/og-image.jpg',
@@ -70,7 +70,7 @@ export const posts = {
     'best-romance-anime': {
         title: 'The Best Romance Anime of All Time',
         description: 'Get ready to feel all the feels! Our definitive guide to the best romance anime of all time, from heart-pounding classics to modern masterpieces.',
-        date: 'November 30, 2025',
+        date: 'November 30, 2024',
         readTime: '15 min read',
         author: 'Anime Blog Team',
         image: 'https://anime.weebcoder.com/og-image.jpg',
@@ -81,7 +81,7 @@ export const posts = {
     'action-anime-primer': {
         title: "The Ultimate Beginner's Primer: Why Action Anime is Your Perfect Gateway",
         description: "Discover why action anime is the perfect entry point into the medium. From Fullmetal Alchemist to Demon Slayer, find your next obsession.",
-        date: 'January 20, 2025',
+        date: 'November 20, 2024',
         readTime: '20 min read',
         author: 'Anime Blog Team',
         image: 'https://anime.weebcoder.com/og-image.jpg',
@@ -92,7 +92,7 @@ export const posts = {
     'isekai-anime-primer': {
         title: "Welcome to the World of Isekai: Your Portal to Infinite Possibilities",
         description: "Explore the most popular genre in anime. From Re:Zero to Slime, discover the best 'another world' adventures.",
-        date: 'January 25, 2025',
+        date: 'November 25, 2024',
         readTime: '25 min read',
         author: 'Anime Blog Team',
         image: 'https://anime.weebcoder.com/og-image.jpg',

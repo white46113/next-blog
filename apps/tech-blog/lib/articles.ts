@@ -70,7 +70,7 @@ export const articles = {
     'windows-11-guide': {
         title: 'Windows 11 Problems? 25+ Fixes for Common Issues in 2025 (Step-by-Step)',
         description: 'Frustrated with Windows 11? Fix installation errors, performance issues, taskbar bugs, and network problems with our 2025 troubleshooting guide. Includes 25+ proven solutions, hidden features, and expert tips to optimize your PC.',
-        date: 'February 5, 2025',
+        date: 'November 15, 2024',
         readTime: '12 min read',
         author: 'Tech Team',
         image: 'https://tech.weebcoder.com/og-image.jpg',
@@ -91,7 +91,7 @@ export const articles = {
     'how-to-speed-up-windows-11': {
         title: 'How to Speed Up Windows 11 in 2025: Complete 5,000+ Word Optimization Guide',
         description: 'Is Windows 11 running slow? Discover enterprise-level optimization techniques to speed up your PC by 50-70%. Includes quick 15-minute fixes, advanced registry tweaks, storage optimization, and hardware upgrade recommendations for all user levels.',
-        date: 'December 7, 2025',
+        date: 'November 28, 2024',
         readTime: '18 min read',
         author: 'Tech Team',
         image: 'https://tech.weebcoder.com/og-image.jpg',
