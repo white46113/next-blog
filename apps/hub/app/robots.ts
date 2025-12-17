@@ -4,8 +4,9 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/_next/', '/admin/'],
       },
     ],
-    sitemap: 'https://weebcoder.com/sitemap-index.xml',
+    sitemap: 'https://weebcoder.com/sitemap.xml',
   };
 }
