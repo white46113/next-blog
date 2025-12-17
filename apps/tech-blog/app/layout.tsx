@@ -2,7 +2,11 @@ import { Inter } from "next/font/google";
 import "../../styles/globals.css";
 import { GoogleAnalytics } from "@repo/lib/GoogleAnalytics";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+    subsets: ["latin"],
+    display: 'swap',
+    preload: true,
+});
 
 export const metadata = {
     metadataBase: new URL('https://tech.weebcoder.com'),
@@ -68,7 +72,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <GoogleAnalytics />
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+                <GoogleAnalytics />
+            </head>
             <body className={inter.className}>
                 {children}
             </body>

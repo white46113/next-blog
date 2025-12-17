@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compress: true,
+  optimizeFonts: true,
   images: {
     domains: ['localhost'],
     unoptimized: true

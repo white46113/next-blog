@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "standalone",
-    typescript: {
-        ignoreBuildErrors: false,
-    },
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-};
+    reactStrictMode: true,
+    compress: true,
+    optimizeFonts: true,
+    swcMinify: true,
+    poweredByHeader: false,
+    images: {
+        domains: ['localhost'],
+        unoptimized: true
+    }
+}
 
 module.exports = nextConfig;

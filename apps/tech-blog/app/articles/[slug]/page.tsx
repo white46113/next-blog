@@ -65,6 +65,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         '@type': 'Article',
         headline: article.title,
         description: article.description,
+        articleBody: article.description,
         image: article.image || 'https://tech.weebcoder.com/og-image.jpg',
         datePublished: article.date,
         dateModified: article.date,

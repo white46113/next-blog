@@ -67,6 +67,7 @@ export default function PostPage({ params }) {
     '@type': 'Article',
     headline: post.title,
     description: post.description,
+    articleBody: post.description,
     image: post.image || 'https://anime.weebcoder.com/og-image.jpg',
     datePublished: post.date,
     dateModified: post.date, // Can be updated when post is modified

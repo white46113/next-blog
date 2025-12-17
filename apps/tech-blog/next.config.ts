@@ -7,6 +7,10 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    compress: true,
+    optimizeFonts: true,
+    swcMinify: true,
+    poweredByHeader: false,
 };
 
 export default nextConfig;

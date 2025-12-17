@@ -96,7 +96,9 @@ export default async function ArticlePage({ params }) {
                 "@type": "Article",
                 "headline": article.title,
                 "description": article.description,
+                "articleBody": article.excerpt || article.description,
                 "image": "https://tools.weebcoder.com/og-image.png",
+                "wordCount": article.wordCount || 2000,
                 "author": {
                     "@type": "Organization",
                     "name": "Tools Team"
@@ -126,29 +128,31 @@ export default async function ArticlePage({ params }) {
 
             <main className="container mx-auto px-4 py-12 max-w-4xl">
                 {/* Article Header */}
-                <div className="mb-8">
-                    <Badge className="mb-4 bg-primary">Guide</Badge>
+                <article>
+                    <div className="mb-8">
+                        <Badge className="mb-4 bg-primary">Guide</Badge>
 
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-                        {article.title}
-                    </h1>
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                            {article.title}
+                        </h1>
 
-                    <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-6">
-                        <div className="flex items-center gap-2">
-                            <Calendar className="h-4 w-4" />
-                            <span>{article.date}</span>
+                        <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-6">
+                            <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4" />
+                                <span>{article.date}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Clock className="h-4 w-4" />
+                                <span>{article.readTime}</span>
+                            </div>
+                            <span>By Tools Team</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4" />
-                            <span>{article.readTime}</span>
-                        </div>
-                        <span>By Tools Team</span>
                     </div>
-                </div>
 
-                <Separator className="my-8" />
+                    <Separator className="my-8" />
 
-                <ArticleComponent />
+                    <ArticleComponent />
+                </article>
 
                 {/* Related Articles */}
                 <RelatedArticles currentSlug={slug} />
