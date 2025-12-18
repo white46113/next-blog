@@ -828,7 +828,7 @@ func main() {
                             <div>
                                 <h2 className="text-3xl font-bold tracking-tight mb-4">Free Online API Tester</h2>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
-                                    Test REST APIs instantly without installing Postman or any other software. Send real HTTP requests, view responses with headers and timing, and generate code in 6+ programming languages. Perfect for quick API testing and debugging.
+                                    Test REST APIs instantly without installing Postman or any other software. Send real HTTP requests, view responses with headers and timing, and generate code in 6+ programming languages. Perfect for quick API testing and debugging. Check out our other <a href="/tools" className="text-primary hover:underline font-medium">free online tools</a> for developers.
                                 </p>
                             </div>
                             <div className="bg-muted/30 p-6 rounded-2xl">
@@ -888,6 +888,84 @@ func main() {
                                         </ul>
                                     </CardContent>
                                 </Card>
+                            </div>
+                        </div>
+
+                        {/* Related Tools Section - Internal Links for SEO */}
+                        <div className="mt-12 p-8 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-2xl border border-primary/10">
+                            <h2 className="text-2xl font-bold tracking-tight mb-4 text-center">Related Developer Tools</h2>
+                            <p className="text-center text-muted-foreground mb-6">
+                                Explore our other free online tools to boost your productivity
+                            </p>
+                            <div className="grid md:grid-cols-3 gap-4">
+                                <a
+                                    href="/tools/qr-code-generator"
+                                    className="group p-4 rounded-lg bg-card hover:bg-muted/50 transition-all border border-transparent hover:border-primary/20 hover:shadow-md"
+                                >
+                                    <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                                        QR Code Generator
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                        Create custom QR codes for URLs, text, and more
+                                    </p>
+                                </a>
+                                <a
+                                    href="/tools/youtube-thumbnail-downloader"
+                                    className="group p-4 rounded-lg bg-card hover:bg-muted/50 transition-all border border-transparent hover:border-primary/20 hover:shadow-md"
+                                >
+                                    <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                                        YouTube Thumbnail Downloader
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                        Download high-quality YouTube video thumbnails
+                                    </p>
+                                </a>
+                                <a
+                                    href="/tools/jpg-to-pdf"
+                                    className="group p-4 rounded-lg bg-card hover:bg-muted/50 transition-all border border-transparent hover:border-primary/20 hover:shadow-md"
+                                >
+                                    <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                                        JPG to PDF Converter
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                        Convert JPG images to PDF documents instantly
+                                    </p>
+                                </a>
+                                <a
+                                    href="/tools/png-to-webp"
+                                    className="group p-4 rounded-lg bg-card hover:bg-muted/50 transition-all border border-transparent hover:border-primary/20 hover:shadow-md"
+                                >
+                                    <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                                        PNG to WebP Converter
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                        Convert PNG images to WebP format for better performance
+                                    </p>
+                                </a>
+                                <a
+                                    href="/tools/bmi-calculator"
+                                    className="group p-4 rounded-lg bg-card hover:bg-muted/50 transition-all border border-transparent hover:border-primary/20 hover:shadow-md"
+                                >
+                                    <h3 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                                        BMI Calculator
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                        Calculate your Body Mass Index instantly
+                                    </p>
+                                </a>
+                                <a
+                                    href="/tools"
+                                    className="group p-4 rounded-lg bg-primary/10 hover:bg-primary/20 transition-all border border-primary/20 hover:border-primary/40 hover:shadow-md flex items-center justify-center"
+                                >
+                                    <div className="text-center">
+                                        <h3 className="font-semibold text-sm mb-1 text-primary">
+                                            View All Tools →
+                                        </h3>
+                                        <p className="text-xs text-muted-foreground">
+                                            Discover more free utilities
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </section>
