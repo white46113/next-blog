@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileImage, Calculator, ArrowRight, Wrench, QrCode, Download, Bug } from "lucide-react";
+import { FileImage, Calculator, ArrowRight, Wrench, QrCode, Download, Bug, Search } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -58,6 +58,7 @@ export default function ToolsPage() {
             icon: Bug,
             tools: [
                 { name: "HTTP Request Tester", href: "/tools/form-data-debugger", description: "Test APIs online - Send real requests, view responses, generate code", icon: Bug },
+                { name: "SEO Crawler", href: "/tools/seo-crawler", description: "Analyze webpages for indexing issues and SEO problems", icon: Search },
             ],
             color: "text-purple-600",
             bgColor: "bg-purple-500/10"
