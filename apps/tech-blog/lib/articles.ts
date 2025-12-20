@@ -7,7 +7,7 @@ import Windows11SpeedGuide from '../components/articles/Windows11SpeedGuide';
 export const articles = {
     '10-signs-your-phone-is-hacked': {
         title: '10 Signs Your Phone Is Hacked (2025 Guide)',
-        description: 'Is your phone acting weird? Discover the 10 telltale signs of phone hacking, learn how to detect hidden malware, and remove hackers from your Android or iPhone in minutes. Complete 3,000-word security guide.',
+        description: 'Discover 10 signs your phone is hacked, how to detect hidden malware, and remove hackers from Android or iPhone. Complete security guide with step-by-step fixes.',
         date: 'January 10, 2025',
         readTime: '12 min read',
         author: 'Tech Team',
@@ -25,7 +25,7 @@ export const articles = {
     },
     'how-to-speed-up-your-phone': {
         title: 'Speed Up Your Phone: 15 Proven Ways (2025)',
-        description: 'Is your phone lagging? Learn 15 proven methods to speed up your Android or iPhone in 2025—from quick 2-minute fixes to advanced optimizations. Boost performance by up to 300% without buying a new device.',
+        description: 'Learn 15 proven methods to speed up Android or iPhone—from quick 2-minute fixes to advanced optimizations. Boost performance up to 300% without buying new device.',
         date: 'January 15, 2025',
         readTime: '10 min read',
         author: 'Tech Team',
@@ -48,7 +48,7 @@ export const articles = {
     },
     'android-storage-guide': {
         title: 'Android Storage Full? 15 Ways to Fix (2025)',
-        description: 'Struggling with "Storage Full" errors? Discover 15 expert-tested methods to reclaim 5-50GB on your Android device in 2025 without deleting photos, apps, or important data. Includes hidden storage hogs most users miss.',
+        description: 'Fix "Storage Full" errors with 15 expert methods to reclaim 5-50GB on Android without deleting photos or apps. Find hidden storage hogs and optimize space.',
         date: 'January 28, 2025',
         readTime: '15 min read',
         author: 'Tech Team',
@@ -69,7 +69,7 @@ export const articles = {
     },
     'windows-11-guide': {
         title: 'Windows 11 Problems? 25+ Fixes (2025)',
-        description: 'Frustrated with Windows 11? Fix installation errors, performance issues, taskbar bugs, and network problems with our 2025 troubleshooting guide. Includes 25+ proven solutions, hidden features, and expert tips to optimize your PC.',
+        description: 'Fix Windows 11 installation errors, performance issues, taskbar bugs, and network problems. 25+ proven solutions, hidden features, and expert optimization tips.',
         date: 'November 15, 2024',
         readTime: '12 min read',
         author: 'Tech Team',
@@ -90,7 +90,7 @@ export const articles = {
     },
     'how-to-speed-up-windows-11': {
         title: 'Speed Up Windows 11: Optimization Guide (2025)',
-        description: 'Is Windows 11 running slow? Discover enterprise-level optimization techniques to speed up your PC by 50-70%. Includes quick 15-minute fixes, advanced registry tweaks, storage optimization, and hardware upgrade recommendations for all user levels.',
+        description: 'Speed up Windows 11 by 50-70% with enterprise-level optimizations. Quick 15-min fixes, registry tweaks, storage tips, and hardware upgrade recommendations.',
         date: 'November 28, 2024',
         readTime: '18 min read',
         author: 'Tech Team',

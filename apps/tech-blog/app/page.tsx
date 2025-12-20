@@ -8,8 +8,8 @@ import IntegratedNav from "@/components/IntegratedNav";
 import CrossAppFooter from "@/components/CrossAppFooter";
 
 export const metadata: Metadata = {
-    title: 'Tech Blog - Latest Technology News, Programming Tutorials & Insights',
-    description: 'Explore expert coding tutorials, in-depth tech reviews, mobile security guides, and the latest software development trends. Join thousands of developers mastering Python, JavaScript, React, and more at Tech Blog.',
+    title: 'Tech Blog - Programming Tutorials & Tech Insights',
+    description: 'Expert coding tutorials, tech reviews, and software development guides. Master Python, JavaScript, React, security, and more with in-depth articles and tutorials.',
     alternates: {
         canonical: 'https://tech.weebcoder.com/',
     },
