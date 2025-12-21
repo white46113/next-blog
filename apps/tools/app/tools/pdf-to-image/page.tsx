@@ -8,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft, Upload, FileText, Download, CheckCircle2, Settings } from "lucide-react";
 import * as pdfjsLib from "pdfjs-dist";
 import JSZip from "jszip";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 // Configure PDF.js worker
 if (typeof window !== "undefined") {
@@ -471,6 +473,12 @@ export default function PdfToImagePage() {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* Related Tools */}
+                <RelatedTools currentPath="/tools/pdf-to-image" category="Converter" />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks />
             </main>
         </div>
     );

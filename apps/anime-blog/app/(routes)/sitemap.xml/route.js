@@ -9,46 +9,32 @@ export function GET() {
     {
       url: 'https://anime.weebcoder.com/',
       lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '1.0'
     },
     {
       url: 'https://anime.weebcoder.com/posts',
       lastmod: currentDate,
-      changefreq: 'daily',
-      priority: '0.8'
     },
     {
       url: 'https://anime.weebcoder.com/privacy',
       lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.5'
     },
     {
       url: 'https://anime.weebcoder.com/terms',
       lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.5'
     },
     {
       url: 'https://anime.weebcoder.com/about',
       lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.6'
     },
     {
       url: 'https://anime.weebcoder.com/contact',
       lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.6'
     }
   ];
 
   const postPages = Object.keys(posts).map((slug) => ({
     url: `https://anime.weebcoder.com/posts/${slug}`,
     lastmod: posts[slug].date ? new Date(posts[slug].date).toISOString() : currentDate,
-    changefreq: 'monthly',
-    priority: '0.9'
   }));
 
   const pages = [...staticPages, ...postPages];
@@ -60,8 +46,6 @@ ${pages
         (page) => `  <url>
     <loc>${page.url}</loc>
     <lastmod>${page.lastmod}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
   </url>`
       )
       .join('\n')}

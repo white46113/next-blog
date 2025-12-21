@@ -12,6 +12,16 @@ export const metadata: Metadata = {
         description: "Convert PDF files to images (PNG, JPEG, WebP) instantly. Free, fast, and privacy-focused.",
         url: "https://tools.weebcoder.com/tools/pdf-to-image",
         type: "website",
+        siteName: "WeebCoder Tools",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "PDF to Image Converter - Free Online Tool",
+        description: "Convert PDF files to images (PNG, JPEG, WebP) instantly. Free, fast, and privacy-focused.",
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
 };
 

@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { QrCode, Download, Link as LinkIcon, Type, FileText } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function QrCodeGenerator() {
     const [text, setText] = useState("");
@@ -298,6 +300,12 @@ export default function QrCodeGenerator() {
                             </Accordion>
                         </div>
                     </section>
+
+                    {/* Related Content */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <RelatedTools currentPath="/tools/qr-code-generator" category="Generator" />
+                        <CrossAppLinks />
+                    </div>
                 </div>
             </div>
         </div>

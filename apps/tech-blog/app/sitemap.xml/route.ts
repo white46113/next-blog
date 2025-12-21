@@ -14,39 +14,27 @@ export function GET() {
         {
             url: 'https://tech.weebcoder.com/',
             lastmod: currentDate,
-            changefreq: 'daily',
-            priority: '1.0'
         },
         // Removed /blog and /tutorials - empty "coming soon" pages hurt SEO
         {
             url: 'https://tech.weebcoder.com/articles',
             lastmod: currentDate,
-            changefreq: 'weekly',
-            priority: '0.9'
         },
         {
             url: 'https://tech.weebcoder.com/privacy',
             lastmod: currentDate,
-            changefreq: 'monthly',
-            priority: '0.5'
         },
         {
             url: 'https://tech.weebcoder.com/terms',
             lastmod: currentDate,
-            changefreq: 'monthly',
-            priority: '0.5'
         },
         {
             url: 'https://tech.weebcoder.com/about',
             lastmod: currentDate,
-            changefreq: 'monthly',
-            priority: '0.6'
         },
         {
             url: 'https://tech.weebcoder.com/contact',
             lastmod: currentDate,
-            changefreq: 'monthly',
-            priority: '0.6'
         }
     ];
 
@@ -57,8 +45,6 @@ export function GET() {
         return {
             url: `https://tech.weebcoder.com/articles/${slug}`,
             lastmod: articleDate,
-            changefreq: 'monthly',
-            priority: '0.9'
         };
     });
 
@@ -71,8 +57,6 @@ ${pages
                 (page) => `  <url>
     <loc>${page.url}</loc>
     <lastmod>${page.lastmod}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
   </url>`
             )
             .join('\n')}

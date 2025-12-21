@@ -7,6 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { ArrowLeft, Upload, FileImage, Download, Zap, CheckCircle2 } from "lucide-react";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function PngToWebpPage() {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -313,6 +315,12 @@ export default function PngToWebpPage() {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* Related Tools */}
+                <RelatedTools currentPath="/tools/png-to-webp" category="Converter" />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks />
             </main>
         </div>
     );

@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Calculator } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function BmiCalculatorPage() {
     const [weight, setWeight] = useState("");
@@ -175,6 +177,12 @@ export default function BmiCalculatorPage() {
                         </p>
                     </CardContent>
                 </Card>
+
+                {/* Related Tools */}
+                <RelatedTools currentPath="/tools/bmi-calculator" category="Calculator" />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks />
             </main>
         </div>
     );

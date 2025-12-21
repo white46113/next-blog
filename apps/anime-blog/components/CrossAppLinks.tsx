@@ -33,16 +33,30 @@ function getAppBackground(app: string): string {
 export default function CrossAppLinks() {
     const suggestions: CrossAppLink[] = [
         {
-            title: 'Android Storage Guide',
-            description: 'Free up space on your device to download more anime',
+            title: 'Android Storage Full? Free Up 5-50GB',
+            description: 'Free up massive storage space on your device to download more anime episodes without deleting anything',
             url: 'https://tech.weebcoder.com/articles/android-storage-guide',
             app: 'tech',
             badge: 'From Tech Blog'
         },
         {
-            title: 'Loan EMI Calculator',
-            description: 'Plan your finances with our free EMI calculator',
-            url: 'https://tools.weebcoder.com/articles/loan-emi-calculator',
+            title: 'Speed Up Your Phone: 15 Proven Ways',
+            description: 'Boost your device performance for smoother anime streaming and faster downloads',
+            url: 'https://tech.weebcoder.com/articles/how-to-speed-up-your-phone',
+            app: 'tech',
+            badge: 'From Tech Blog'
+        },
+        {
+            title: 'Free Percentage Calculator & Guide',
+            description: 'Calculate anime ratings, statistics, and percentages instantly with our easy-to-use tools',
+            url: 'https://tools.weebcoder.com/articles/how-to-calculate-percentage',
+            app: 'tools',
+            badge: 'From Tools'
+        },
+        {
+            title: 'Free GST/VAT Calculator',
+            description: 'Calculate taxes on anime merchandise, manga, and figure purchases instantly',
+            url: 'https://tools.weebcoder.com/articles/gst-vat-calculator',
             app: 'tools',
             badge: 'From Tools'
         }
@@ -60,7 +74,7 @@ export default function CrossAppLinks() {
                 <p className="text-muted-foreground mb-6">
                     Explore more content from our other platforms
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {suggestions.map((link, index) => {
                         const gradientColor = getAppColor(link.app);
                         const bgColor = getAppBackground(link.app);

@@ -9,6 +9,9 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Calculator, Percent, ArrowRight, TrendingUp, Divide } from "lucide-react";
+import RelatedTools from "@/components/RelatedTools";
+import RelatedArticles from "@/components/RelatedArticles";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function PercentageCalculator() {
     const [xOfY, setXOfY] = useState({ x: "", y: "", result: "" });
@@ -320,6 +323,13 @@ export default function PercentageCalculator() {
                             </Accordion>
                         </div>
                     </section>
+
+                    {/* Related Content */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <RelatedArticles currentSlug="percentage-calculator" />
+                        <RelatedTools currentPath="/tools/percentage-calculator" category="Calculator" />
+                        <CrossAppLinks />
+                    </div>
                 </div>
             </div>
         </div>

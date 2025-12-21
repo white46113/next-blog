@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Download, Youtube, AlertCircle, Image as ImageIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function YouTubeThumbnailDownloader() {
     const [url, setUrl] = useState("");
@@ -433,6 +435,12 @@ export default function YouTubeThumbnailDownloader() {
                             </Accordion>
                         </div>
                     </section>
+
+                    {/* Related Content */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <RelatedTools currentPath="/tools/youtube-thumbnail-downloader" category="Downloader" />
+                        <CrossAppLinks />
+                    </div>
                 </div>
             </div>
         </div>

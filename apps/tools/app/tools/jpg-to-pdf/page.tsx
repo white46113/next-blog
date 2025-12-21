@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Upload, FileImage, Download, CheckCircle2 } from "lucide-react";
 import { jsPDF } from "jspdf";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 export default function JpgToPdfPage() {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -265,6 +267,12 @@ export default function JpgToPdfPage() {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* Related Tools */}
+                <RelatedTools currentPath="/tools/jpg-to-pdf" category="Converter" />
+
+                {/* Cross-App Links */}
+                <CrossAppLinks />
             </main>
         </div>
     );

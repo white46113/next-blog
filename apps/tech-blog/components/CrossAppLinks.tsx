@@ -37,15 +37,22 @@ export default function CrossAppLinks({ currentApp }: { currentApp: 'tech' | 'to
     if (currentApp === 'tech') {
         suggestions.push(
             {
-                title: 'Free Percentage Calculator',
-                description: 'Calculate percentages instantly with our easy-to-use calculator tools',
+                title: 'Free Percentage Calculator - 5 Easy Methods',
+                description: 'Master percentage calculations for business, finance, and daily life with our comprehensive guide and free calculator',
                 url: 'https://tools.weebcoder.com/articles/how-to-calculate-percentage',
                 app: 'tools',
                 badge: 'From Tools'
             },
             {
+                title: 'Free Loan EMI Calculator 2025',
+                description: 'Calculate accurate EMI for home loans, car loans, and personal loans instantly with amortization schedules',
+                url: 'https://tools.weebcoder.com/articles/loan-emi-calculator',
+                app: 'tools',
+                badge: 'From Tools'
+            },
+            {
                 title: 'Top 10 Anime to Watch in 2025',
-                description: 'Take a break and discover the best anime series of 2025',
+                description: 'Take a break and discover the best anime series defining 2025, from Attack on Titan to Demon Slayer',
                 url: 'https://anime.weebcoder.com/posts/top-10-anime-2025',
                 app: 'anime',
                 badge: 'From Anime Blog'
@@ -54,15 +61,22 @@ export default function CrossAppLinks({ currentApp }: { currentApp: 'tech' | 'to
     } else if (currentApp === 'tools') {
         suggestions.push(
             {
-                title: 'How to Speed Up Your Phone',
-                description: 'Optimize your device performance with these proven methods',
+                title: 'Speed Up Your Phone: 15 Proven Ways',
+                description: 'Boost Android or iPhone performance up to 300% with quick 2-minute fixes and advanced optimizations',
                 url: 'https://tech.weebcoder.com/articles/how-to-speed-up-your-phone',
                 app: 'tech',
                 badge: 'From Tech Blog'
             },
             {
+                title: 'Android Storage Full? 15 Ways to Fix',
+                description: 'Reclaim 5-50GB on Android without deleting photos. Find hidden storage hogs and optimize space',
+                url: 'https://tech.weebcoder.com/articles/android-storage-guide',
+                app: 'tech',
+                badge: 'From Tech Blog'
+            },
+            {
                 title: 'Best Anime Like Solo Leveling',
-                description: 'Discover anime with OP protagonists and leveling systems',
+                description: 'Discover anime with OP protagonists, unique leveling systems, and epic battles',
                 url: 'https://anime.weebcoder.com/posts/best-anime-like-solo-leveling',
                 app: 'anime',
                 badge: 'From Anime Blog'
@@ -71,16 +85,23 @@ export default function CrossAppLinks({ currentApp }: { currentApp: 'tech' | 'to
     } else if (currentApp === 'anime') {
         suggestions.push(
             {
-                title: 'Android Storage Guide',
-                description: 'Free up space on your device to download more anime',
+                title: 'Android Storage Guide - Free Up Space',
+                description: 'Free up 5-50GB on your device to download more anime without deleting your favorite shows',
                 url: 'https://tech.weebcoder.com/articles/android-storage-guide',
                 app: 'tech',
                 badge: 'From Tech Blog'
             },
             {
-                title: 'Loan EMI Calculator',
-                description: 'Plan your finances with our free EMI calculator',
-                url: 'https://tools.weebcoder.com/articles/loan-emi-calculator',
+                title: '10 Signs Your Phone Is Hacked',
+                description: 'Protect your device and personal data with this complete security guide and step-by-step fixes',
+                url: 'https://tech.weebcoder.com/articles/10-signs-your-phone-is-hacked',
+                app: 'tech',
+                badge: 'From Tech Blog'
+            },
+            {
+                title: 'Free Percentage Calculator & Guide',
+                description: 'Calculate discounts, grades, and percentages instantly with our easy-to-use free tools',
+                url: 'https://tools.weebcoder.com/articles/how-to-calculate-percentage',
                 app: 'tools',
                 badge: 'From Tools'
             }
@@ -103,7 +124,7 @@ export default function CrossAppLinks({ currentApp }: { currentApp: 'tech' | 'to
                 <p className="text-muted-foreground mb-6">
                     Explore more content from our other platforms
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {suggestions.map((link, index) => {
                         const gradientColor = getAppColor(link.app);
                         const bgColor = getAppBackground(link.app);

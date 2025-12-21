@@ -12,6 +12,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import RelatedTools from "@/components/RelatedTools";
+import CrossAppLinks from "@/components/CrossAppLinks";
 
 interface RequestConfig {
     method: string;
@@ -1043,6 +1045,12 @@ func main() {
                             </Accordion>
                         </div>
                     </section>
+
+                    {/* Related Content */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <RelatedTools currentPath="/tools/form-data-debugger" category="Developer" />
+                        <CrossAppLinks />
+                    </div>
                 </div>
             </div>
         </div>

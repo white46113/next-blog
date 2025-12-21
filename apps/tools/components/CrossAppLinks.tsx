@@ -33,16 +33,30 @@ function getAppBackground(app: string): string {
 export default function CrossAppLinks() {
     const suggestions: CrossAppLink[] = [
         {
-            title: 'How to Speed Up Your Phone',
-            description: 'Optimize your device performance with these proven methods',
+            title: 'Speed Up Your Phone: 15 Proven Ways (2025)',
+            description: 'Boost Android or iPhone performance up to 300% with quick 2-minute fixes and advanced optimizations',
             url: 'https://tech.weebcoder.com/articles/how-to-speed-up-your-phone',
             app: 'tech',
             badge: 'From Tech Blog'
         },
         {
-            title: 'Best Anime Like Solo Leveling',
-            description: 'Discover anime with OP protagonists and leveling systems',
+            title: 'Android Storage Full? 15 Ways to Fix',
+            description: 'Reclaim 5-50GB on Android without deleting photos. Find hidden storage hogs and optimize your device',
+            url: 'https://tech.weebcoder.com/articles/android-storage-guide',
+            app: 'tech',
+            badge: 'From Tech Blog'
+        },
+        {
+            title: 'Best Anime Like Solo Leveling (2025)',
+            description: 'Discover the best anime with OP protagonists, unique leveling systems, and epic battles',
             url: 'https://anime.weebcoder.com/posts/best-anime-like-solo-leveling',
+            app: 'anime',
+            badge: 'From Anime Blog'
+        },
+        {
+            title: 'Top 10 Anime to Watch in 2025',
+            description: 'From Attack on Titan: Legacy to Demon Slayer: Infinite Castle Arc - discover must-watch anime of 2025',
+            url: 'https://anime.weebcoder.com/posts/top-10-anime-2025',
             app: 'anime',
             badge: 'From Anime Blog'
         }
@@ -60,7 +74,7 @@ export default function CrossAppLinks() {
                 <p className="text-muted-foreground mb-6">
                     Explore more content from our other platforms
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {suggestions.map((link, index) => {
                         const gradientColor = getAppColor(link.app);
                         const bgColor = getAppBackground(link.app);

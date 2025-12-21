@@ -26,11 +26,16 @@ export const metadata: Metadata = {
         description: "Analyze your webpages for SEO issues. Detect noindex tags, canonicalization problems, thin content, and more.",
         type: "website",
         url: "https://tools.weebcoder.com/tools/seo-crawler",
+        siteName: "WeebCoder Tools",
     },
     twitter: {
         card: "summary_large_image",
         title: "Free SEO Crawler - Find Indexing Issues",
         description: "Analyze your webpages for SEO issues. Detect noindex tags, canonicalization problems, thin content, and more.",
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
 };
 
