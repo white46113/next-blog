@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://weebcoder.com'),
     title: "WeebCoder - Your Hub for Anime, Tech & Tools",
     alternates: {
         canonical: 'https://weebcoder.com',
@@ -21,6 +22,17 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "WeebCoder - Your Hub for Anime, Tech & Tools",
         description: "Discover anime reviews, tech tutorials, and free online tools.",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
 };
 
