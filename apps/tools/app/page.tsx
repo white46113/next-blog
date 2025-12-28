@@ -20,6 +20,7 @@ export default function HomePage() {
             description: "Convert images between different formats",
             icon: FileImage,
             tools: [
+                { name: "Crop Image", href: "/tools/crop-image", description: "Crop images to exact dimensions with aspect ratios" },
                 { name: "JPG to PDF", href: "/tools/jpg-to-pdf", description: "Convert JPG images to PDF documents" },
                 { name: "PDF to Image", href: "/tools/pdf-to-image", description: "Convert PDF pages to PNG, JPEG, or WebP" },
                 { name: "PNG to WebP", href: "/tools/png-to-webp", description: "Convert PNG to modern WebP format" },

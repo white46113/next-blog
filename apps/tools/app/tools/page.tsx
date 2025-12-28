@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileImage, Calculator, ArrowRight, Wrench, QrCode, Download, Bug, Search } from "lucide-react";
+import { FileImage, Calculator, ArrowRight, Wrench, QrCode, Download, Bug, Search, Crop } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,6 +32,7 @@ export default function ToolsPage() {
             description: "Convert images between different formats",
             icon: FileImage,
             tools: [
+                { name: "Crop Image", href: "/tools/crop-image", description: "Crop images to exact dimensions with aspect ratios", icon: Crop },
                 { name: "JPG to PDF", href: "/tools/jpg-to-pdf", description: "Convert JPG images to PDF documents", icon: FileImage },
                 { name: "PDF to Image", href: "/tools/pdf-to-image", description: "Convert PDF pages to PNG, JPEG, or WebP", icon: FileImage },
                 { name: "PNG to WebP", href: "/tools/png-to-webp", description: "Convert PNG to modern WebP format", icon: FileImage },

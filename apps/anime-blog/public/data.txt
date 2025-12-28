@@ -1,281 +1,321 @@
-import { motion } from "framer-motion";
-import { Sparkles, Play, Film } from "lucide-react";
+Best Dark Fantasy Anime of All Time (That Actually Leave a Scar)
 
-import React, { useState, useEffect } from "react";
+Let me be honest for a second.
 
-// Anime Personality Quiz - Single-file React component for Next.js + Tailwind
-// Put this file in `pages/quiz.jsx` (Next.js pages dir) or `app/quiz/page.jsx` if using the app router.
-// Tailwind CSS should already be set up in your project.
+Not all fantasy anime hit the same.
 
-const QUESTIONS = [
-  {
-    id: 1,
-    q: "What's your ideal weekend plan?",
-    options: [
-      { id: "a", t: "shonen", text: "Train hard, binge action-packed shows" },
-      { id: "b", t: "slice", text: "Relax with cozy slice-of-life anime" },
-      { id: "c", t: "isekai", text: "Start a new adventure (game or story)" },
-      { id: "d", t: "psy", text: "Watch something mind-bending and deep" },
-    ],
-  },
-  {
-    id: 2,
-    q: "Pick a favorite color palette:",
-    options: [
-      { id: "a", t: "slice", text: "Soft pastels" },
-      { id: "b", t: "shonen", text: "Bold primary colors" },
-      { id: "c", t: "psy", text: "Muted, moody tones" },
-      { id: "d", t: "isekai", text: "Vibrant fantasy hues" },
-    ],
-  },
-  {
-    id: 3,
-    q: "What's the best protagonist trait?",
-    options: [
-      { id: "a", t: "shonen", text: "Determination and growth" },
-      { id: "b", t: "psy", text: "Complex, flawed mind" },
-      { id: "c", t: "slice", text: "Relatable and chill" },
-      { id: "d", t: "isekai", text: "Quirky outsider vibe" },
-    ],
-  },
-  {
-    id: 4,
-    q: "Which soundtrack would you pick?",
-    options: [
-      { id: "a", t: "shonen", text: "Pumped-up battle themes" },
-      { id: "b", t: "slice", text: "Mellow acoustic" },
-      { id: "c", t: "psy", text: "Haunting ambient" },
-      { id: "d", t: "isekai", text: "Epic orchestral" },
-    ],
-  },
-  {
-    id: 5,
-    q: "You find a mysterious item — it probably: ",
-    options: [
-      { id: "a", t: "isekai", text: "Teleports you to another world" },
-      { id: "b", t: "shonen", text: "Gives a power-up" },
-      { id: "c", t: "slice", text: "Reminds you of home" },
-      { id: "d", t: "psy", text: "Unravels a secret about you" },
-    ],
-  },
-];
+Some are flashy. Some are fun. Some are just power trips wrapped in pretty animation.
+But dark fantasy anime? That’s different. That genre hurts. It lingers. It makes you uncomfortable in a way that feels intentional — like the story is daring you to look away… and you don’t.
 
-const RESULTS = {
-  shonen: {
-    title: "The Shonen Spirit",
-    desc: "You love hype, growth, and big emotional wins. You enjoy series where characters train, fail, learn, and then come back stronger.",
-    recs: ["My Hero Academia", "Naruto", "Demon Slayer"],
-  },
-  slice: {
-    title: "Cozy Slice-of-Life",
-    desc: "You appreciate small moments, warm character interactions, and soothing worldbuilding. You’re here for feelings and comfort.",
-    recs: ["Barakamon", "March Comes in Like a Lion", "K-On!"],
-  },
-  isekai: {
-    title: "The Adventurer (Isekai)",
-    desc: "You dream of other worlds. Escapism, exploration, and quirky fantasy settings make your day.",
-    recs: ["Re:Zero", "That Time I Got Reincarnated as a Slime", "Konosuba"],
-  },
-  psy: {
-    title: "Psychological / Mind-bending",
-    desc: "You enjoy twists, unreliable narrators, and shows that leave you thinking long after they end.",
-    recs: ["Paranoia Agent", "Monster", "Serial Experiments Lain"],
-  },
-};
+This list isn’t about what’s “popular on MAL this month.”
+It’s about dark fantasy anime that stay with you, question your morals, and sometimes straight-up ruin your mood — in the best possible way.
 
-// --- QUIZ BUNDLE SUPPORT ADDED ---
-// This file now includes multiple quizzes in one bundle.
-// Quizzes:
-// 1. Personality Quiz (existing)
-// 2. Genre Quiz
-// 3. "What To Watch Next" Quiz
-// A selector screen is added so users can pick which quiz to take.
+If you’re here looking for edge without substance, you’re in the wrong place.
+If you want pain, depth, brutal worlds, broken characters, and stories that don’t apologize — welcome.
 
-export default function QuizBundle() {
-  const [step, setStep] = useState(0); // 0 = intro, 1..n = questions, n+1 = result
-  const [answers, setAnswers] = useState({});
-  const [scores, setScores] = useState({ shonen: 0, slice: 0, isekai: 0, psy: 0 });
-  const [resultKey, setResultKey] = useState(null);
+What I Mean by “Dark Fantasy” (Before We Start)
 
-  useEffect(() => {
-    // load progress from localStorage
-    try {
-      const saved = localStorage.getItem("anime_quiz_progress");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.step) setStep(parsed.step);
-        if (parsed.answers) setAnswers(parsed.answers);
-        if (parsed.scores) setScores(parsed.scores);
-      }
-    } catch (e) {
-      // ignore
-    }
-  }, []);
+Because let’s clear this up.
 
-  useEffect(() => {
-    // persist progress
-    const payload = { step, answers, scores };
-    try {
-      localStorage.setItem("anime_quiz_progress", JSON.stringify(payload));
-    } catch (e) {}
-  }, [step, answers, scores]);
+Dark fantasy isn’t just:
 
-  function startQuiz() {
-    setStep(1);
-    setAnswers({});
-    setScores({ shonen: 0, slice: 0, isekai: 0, psy: 0 });
-    setResultKey(null);
-  }
+Blood ✔️
 
-  function selectOption(questionId, option) {
-    setAnswers((prev) => ({ ...prev, [questionId]: option.id }));
-    // update scores
-    setScores((prev) => {
-      const next = { ...prev };
-      next[option.t] = (next[option.t] || 0) + 1;
-      return next;
-    });
+Gore ✔️
 
-    // move to next step after a tiny delay for UX
-    const nextStep = questionId < QUESTIONS.length ? step + 1 : QUESTIONS.length + 1;
-    setTimeout(() => setStep(nextStep), 250);
-  }
+Death ✔️
 
-  function computeResult() {
-    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-    const top = sorted[0][0];
-    setResultKey(top);
-  }
+That’s surface-level darkness.
 
-  useEffect(() => {
-    if (step === QUESTIONS.length + 1) {
-      computeResult();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [step]);
+Real dark fantasy anime has:
 
-  function resetQuiz() {
-    localStorage.removeItem("anime_quiz_progress");
-    startQuiz();
-  }
+Morally gray protagonists
 
-  function shareResult() {
-    if (!resultKey) return;
-    const text = `I got ${RESULTS[resultKey].title} on the Anime Personality Quiz — try it: ${typeof window !== 'undefined' ? window.location.href : ''}`;
-    if (navigator.share) {
-      navigator.share({ text }).catch(() => {});
-    } else {
-      navigator.clipboard?.writeText(text).then(() => alert("Result copied to clipboard!"));
-    }
-  }
+Hopeless or cruel worlds
 
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 p-6 flex items-center justify-center">
-      <div className="max-w-4xl w-full bg-gray-900/60 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
-        {step === -1 && (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Anime Quiz Center</h1>
-            <p className="mb-6 text-gray-300">Choose a quiz to get started:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(0)} className="p-4 rounded-xl bg-indigo-600 hover:bg-indigo-500">Personality Quiz</button>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(-2)} className="p-4 rounded-xl bg-gray-700 hover:bg-gray-600">Genre Quiz</button>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setStep(-3)} className="p-4 rounded-xl bg-gray-700 hover:bg-gray-600">What To Watch Next</button>
-            </div>
-          </div>
-        )}
+Consequences that actually matter
 
-        {/* Personality Quiz Original UI Follows */
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 p-6 flex items-center justify-center">
-      <div className="max-w-3xl w-full bg-gray-900/60 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
-        <h1 className="text-3xl font-bold mb-2">Which Anime Character Type Are You?</h1>
-        <p className="mb-6 text-gray-300">A quick, friendly quiz to match you with an anime vibe. No accounts, fully client-side.</p>
+Power that costs something
 
-        {step === 0 && (
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="p-4 bg-gray-800 rounded-lg">
-                <h3 className="font-semibold">Why take it?</h3>
-                <ul className="list-disc list-inside text-gray-300">
-                  <li>Fun, shareable results</li>
-                  <li>Lightweight and fast — everything runs in your browser</li>
-                  <li>Easy to expand with more questions</li>
-                </ul>
-              </div>
-              <div className="p-4 bg-gray-800 rounded-lg">
-                <h3 className="font-semibold">How it works</h3>
-                <p className="text-gray-300">Pick the option that fits best. At the end, you'll get a matching "type" with recommended anime.</p>
-              </div>
-            </div>
+Stories that don’t promise a happy ending
 
-            <div className="flex gap-3">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={startQuiz} className="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold">Start Quiz</button>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { setStep(QUESTIONS.length + 1); }} className="px-5 py-3 rounded-xl bg-gray-700 hover:bg-gray-600">Surprise me (fast)</button>
-            </div>
-          </div>
-        )}
+And most importantly — suffering that changes people.
 
-        {step >= 1 && step <= QUESTIONS.length && (
-          <div>
-            <div className="mb-4 flex items-center justify-between">
-              <div className="text-sm text-gray-400">Question {step} of {QUESTIONS.length}</div>
-              <div className="text-sm text-gray-400">Progress: {Object.keys(answers).length}/{QUESTIONS.length}</div>
-            </div>
+Alright. Let’s get into it.
 
-            <div className="bg-gray-800 p-6 rounded-xl">
-              <h2 className="text-xl font-semibold mb-4">{QUESTIONS[step - 1].q}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {QUESTIONS[step - 1].options.map((opt) => (
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                    key={opt.id}
-                    onClick={() => selectOption(QUESTIONS[step - 1].id, opt)}
-                    className="text-left p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition"
-                  >
-                    {opt.text}
-                  </button>
-                ))}
-              </div>
-            </div>
+1. Berserk (1997 / Golden Age Arc / Memorial Edition)
+The benchmark. The trauma. The standard.
 
-            <div className="mt-4 flex justify-between items-center">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { if (step > 1) setStep(step - 1); }} className="px-4 py-2 bg-gray-700 rounded-lg">Back</button>
-              <div className="text-gray-400">Tip: Your first instinct is usually best.</div>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { setStep(QUESTIONS.length + 1); }} className="px-4 py-2 bg-gray-700 rounded-lg">Finish early</button>
-            </div>
-          </div>
-        )}
+If someone tells me they love dark fantasy anime and haven’t watched Berserk, I already know we’re not on the same wavelength.
 
-        {step === QUESTIONS.length + 1 && resultKey && (
-          <div className="mt-6">
-            <div className="bg-gray-800 p-6 rounded-xl">
-              <h2 className="text-2xl font-bold mb-2">{RESULTS[resultKey].title}</h2>
-              <p className="text-gray-300 mb-4">{RESULTS[resultKey].desc}</p>
-              <h3 className="font-semibold">Recommended to watch:</h3>
-              <ul className="list-disc list-inside mb-4">
-                {RESULTS[resultKey].recs.map((r) => <li key={r}>{r}</li>)}
-              </ul>
+Berserk isn’t just dark — it’s merciless.
 
-              <div className="flex gap-3">
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={shareResult} className="px-4 py-2 bg-indigo-600 rounded-lg">Share Result</button>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={resetQuiz} className="px-4 py-2 bg-gray-700 rounded-lg">Retake</button>
-                <a href="/" className="px-4 py-2 bg-gray-700 rounded-lg">Back to Home</a>
-              </div>
-            </div>
+Guts isn’t a hero because he’s strong.
+He’s a hero because the world has tried to crush him since birth — and failed.
 
-            <div className="mt-4 p-4 bg-gray-800 rounded-lg">
-              <h4 className="font-semibold mb-2">Why this result?</h4>
-              <p className="text-gray-300">We tally your answers to find which vibe you chose most. You can expand this logic to weight answers differently or add tie-breakers.</p>
-            </div>
-          </div>
-        )}
+This anime gives you:
 
-        {step === QUESTIONS.length + 1 && !resultKey && (
-          <div className="mt-6 p-6 bg-gray-800 rounded-xl">
-            <p className="text-gray-300">Calculating result...</p>
-          </div>
-        )}
+A medieval world soaked in despair
 
-        <div className="mt-6 text-sm text-gray-500">All quiz data is stored in the browser only. Customize questions & results in the component (QUESTIONS & RESULTS).</div>
-      </div>
-    </div>
-  );
-}
+Friendship that feels real
+
+Betrayal that feels personal
+
+A villain who didn’t start as evil — which somehow makes it worse
+
+The Golden Age Arc is one of the most emotionally devastating arcs in anime history. The Eclipse alone has traumatized an entire generation.
+
+Why Berserk still dominates the genre:
+
+Darkness isn’t aesthetic — it’s thematic
+
+Violence has meaning
+
+Hope exists… but it’s fragile
+
+This is not an anime you “enjoy.”
+It’s one you endure.
+
+2. Attack on Titan
+Dark fantasy disguised as mainstream anime
+
+I know some people hesitate to call AoT dark fantasy.
+
+They’re wrong.
+
+Attack on Titan starts as survival horror and slowly transforms into philosophical, political, and existential dark fantasy. By the final seasons, it’s no longer about Titans — it’s about:
+
+Freedom vs safety
+
+Cycles of hatred
+
+Whether genocide can ever be justified
+
+Eren Yeager is one of the most controversial protagonists in anime for a reason. The story forces you to question who the villain actually is — and then refuses to give you an easy answer.
+
+Why it belongs here:
+
+Brutal worldbuilding
+
+Moral collapse over time
+
+No character is safe — emotionally or physically
+
+Attack on Titan doesn’t just break its characters.
+It breaks the audience too.
+
+3. Claymore
+Cold, bleak, and criminally underrated
+
+Claymore is what happens when dark fantasy chooses atmosphere over hype.
+
+The world feels empty. The colors are muted. The fights are brutal, but never flashy. And the women? They aren’t sexualized power fantasies — they’re tragic weapons.
+
+These warriors are half-human, half-monster, slowly losing their humanity every time they fight.
+
+And that’s the core of Claymore:
+
+Power is borrowed. And the interest is your soul.
+
+Why Claymore hits hard:
+
+Strong female-led cast without fanservice
+
+Emotional restraint instead of melodrama
+
+A constant sense of quiet dread
+
+It doesn’t scream for attention — it whispers despair.
+
+4. Devilman Crybaby
+Not just dark — emotionally annihilating
+
+This anime doesn’t care if you’re comfortable.
+
+Devilman Crybaby takes the idea of good vs evil and completely dismantles it. Demons aren’t just monsters. Humans aren’t just victims. Love exists — but it’s fragile, temporary, and often meaningless in the face of cosmic cruelty.
+
+By the end, you’re not shocked.
+
+You’re empty.
+
+Why it’s elite dark fantasy:
+
+Abstract storytelling with brutal clarity
+
+Psychological horror over cheap gore
+
+A finale that feels like a punch to the soul
+
+You don’t recommend Devilman Crybaby casually.
+You warn people before they watch it.
+
+5. Made in Abyss
+Cute art. Absolute nightmare.
+
+This anime is proof that visual style means nothing in dark fantasy.
+
+Made in Abyss looks innocent — until it isn’t. And once it drops the mask, it never puts it back on.
+
+Children descend into a pit that literally punishes them for trying to return. The deeper they go, the worse the consequences — physically, mentally, existentially.
+
+What makes it terrifying:
+
+Body horror that feels cruel
+
+Suffering that is slow and methodical
+
+A world that doesn’t care about innocence
+
+This anime doesn’t shock you suddenly.
+It erodes you over time.
+
+6. Dororo (2019)
+Humanity vs survival
+
+Dororo is quiet dark fantasy — the kind that doesn’t rely on gore but still hurts.
+
+Hyakkimaru is born without limbs, senses, or skin because his father sacrificed him to demons for power. Every demon he kills gives him a piece of his body back.
+
+Sounds hopeful, right?
+
+Except each step toward becoming human pushes the world further into chaos.
+
+Why Dororo stands out:
+
+Deep moral conflict
+
+Emotional storytelling
+
+Tragedy rooted in selfish ambition
+
+This anime asks a painful question:
+
+If your existence causes suffering… do you deserve to exist?
+
+7. Tokyo Ghoul (Season 1 specifically)
+Identity crisis done right
+
+Tokyo Ghoul’s first season is a masterclass in psychological dark fantasy.
+
+Kaneki doesn’t want power. He doesn’t want violence. He just wants to live. And the world refuses to let him.
+
+The horror isn’t the ghouls — it’s watching someone’s morality crumble under pressure.
+
+Why Season 1 still matters:
+
+Internal conflict over edgy spectacle
+
+A protagonist who breaks realistically
+
+One of the most iconic transformations in anime
+
+Yes, later seasons fall off.
+But Season 1? Still elite.
+
+8. Hell’s Paradise (Jigokuraku)
+Modern dark fantasy done right
+
+Hell’s Paradise is violent, philosophical, and surprisingly introspective.
+
+It throws criminals onto a cursed island filled with immortal monsters and forces them to confront:
+
+Death
+
+Regret
+
+The meaning of living
+
+Gabimaru isn’t driven by ambition — he’s driven by emptiness.
+
+Why it works:
+
+Taoist philosophy mixed with brutality
+
+Gorgeous but disturbing visuals
+
+Characters who aren’t pretending to be heroes
+
+This anime proves modern dark fantasy can still feel raw.
+
+9. Re:Zero
+Psychological suffering as a mechanic
+
+People underestimate how dark Re:Zero really is.
+
+Subaru isn’t powerful. He isn’t special. He just dies — over and over — carrying trauma that no one else remembers.
+
+The horror isn’t death.
+It’s remembering everything.
+
+Why it qualifies:
+
+Mental breakdowns portrayed realistically
+
+Hopeless loops with emotional consequences
+
+Pain without instant reward
+
+Re:Zero asks:
+
+How much suffering before a person breaks?
+
+10. Fate/Zero
+No heroes. Only ideals and corpses.
+
+Fate/Zero is what happens when noble ideals collide with reality.
+
+Every character believes they’re right.
+Every belief leads to bloodshed.
+
+Kiritsugu isn’t evil — he’s pragmatic. And that makes him terrifying.
+
+Why Fate/Zero is peak dark fantasy:
+
+Philosophical warfare
+
+Tragic inevitability
+
+A world where winning still means losing
+
+No character walks away clean.
+
+Honorable Mentions (Still Worth Your Time)
+
+Akame ga Kill – Messy but emotionally effective
+
+Overlord – Dark power fantasy from the villain’s POV
+
+The Ancient Magus’ Bride – Soft dark fantasy with emotional depth
+
+Parasyte – Sci-fi dark fantasy crossover done right
+
+Why Dark Fantasy Anime Hits Harder Than Ever
+
+I think the reason dark fantasy anime keeps growing is simple.
+
+People are tired of fake hope.
+
+We want stories that:
+
+Admit the world is unfair
+
+Acknowledge pain without sugarcoating
+
+Show strength that comes from endurance, not luck
+
+Dark fantasy doesn’t promise happiness.
+It promises truth.
+
+And sometimes, that’s more comforting.
+
+Final Thoughts
+
+If you’re new to dark fantasy anime, start slow.
+If you’re already deep into it — you know exactly why these shows matter.
+
+They don’t entertain you.
+
+They challenge you.
+
+And honestly?
+That’s why we keep coming back.

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, FileImage, QrCode, Download, Bug, Search, Percent } from 'lucide-react';
+import { ArrowRight, Calculator, FileImage, QrCode, Download, Bug, Search, Percent, Crop } from 'lucide-react';
 
 interface Tool {
     name: string;
@@ -14,6 +14,7 @@ interface Tool {
 const allTools: Tool[] = [
     { name: "BMI Calculator", href: "/tools/bmi-calculator", description: "Calculate your Body Mass Index", category: "Calculator", icon: Calculator },
     { name: "Percentage Calculator", href: "/tools/percentage-calculator", description: "Calculate percentages easily", category: "Calculator", icon: Percent },
+    { name: "Crop Image", href: "/tools/crop-image", description: "Crop images to exact dimensions with aspect ratios", category: "Converter", icon: Crop },
     { name: "JPG to PDF", href: "/tools/jpg-to-pdf", description: "Convert JPG images to PDF", category: "Converter", icon: FileImage },
     { name: "PDF to Image", href: "/tools/pdf-to-image", description: "Convert PDF to PNG/JPEG/WebP", category: "Converter", icon: FileImage },
     { name: "PNG to WebP", href: "/tools/png-to-webp", description: "Convert PNG to modern WebP format", category: "Converter", icon: FileImage },

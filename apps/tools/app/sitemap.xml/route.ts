@@ -33,6 +33,10 @@ export function GET() {
             lastmod: currentDate,
         },
         {
+            url: 'https://tools.weebcoder.com/tools/crop-image',
+            lastmod: currentDate,
+        },
+        {
             url: 'https://tools.weebcoder.com/tools/qr-code-generator',
             lastmod: currentDate,
         },
