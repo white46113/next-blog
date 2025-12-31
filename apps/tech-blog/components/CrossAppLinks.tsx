@@ -129,7 +129,7 @@ export default function CrossAppLinks({ currentApp }: { currentApp: 'tech' | 'to
                         const gradientColor = getAppColor(link.app);
                         const bgColor = getAppBackground(link.app);
                         return (
-                            <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                            <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer nofollow">
                                 <Card className={`h-full group cursor-pointer relative overflow-hidden
                                     ${bgColor}
                                     border-2 border-transparent

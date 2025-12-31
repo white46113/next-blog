@@ -14,7 +14,7 @@ export default function CrossAppNav({ currentApp = 'hub' }) {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo/Brand */}
                     <div className="flex items-center">
-                        <a href="https://weebcoder.com" className="flex items-center gap-2">
+                        <a href="https://weebcoder.com" className="flex items-center gap-2" rel="nofollow">
                             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                                 WeebCoder
                             </span>
@@ -27,6 +27,7 @@ export default function CrossAppNav({ currentApp = 'hub' }) {
                             <a
                                 key={app.key}
                                 href={app.url}
+                                rel="nofollow"
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${currentApp === app.key
                                         ? 'bg-purple-100 text-purple-700'
                                         : 'text-gray-700 hover:bg-gray-100'
@@ -53,6 +54,7 @@ export default function CrossAppNav({ currentApp = 'hub' }) {
                         <a
                             key={app.key}
                             href={app.url}
+                            rel="nofollow"
                             className={`block px-4 py-2 rounded-lg text-sm font-medium ${currentApp === app.key
                                     ? 'bg-purple-100 text-purple-700'
                                     : 'text-gray-700 hover:bg-gray-100'

@@ -38,6 +38,7 @@ export default function IntegratedNav({
                                 <a
                                     key={link.key}
                                     href={link.url}
+                                    rel={link.key === 'hub' ? undefined : 'nofollow'}
                                     className={`px-3 py-1.5 rounded-md transition-colors ${currentApp === link.key
                                         ? 'bg-primary/10 text-primary font-medium'
                                         : 'text-muted-foreground hover:text-foreground hover:bg-accent'

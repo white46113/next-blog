@@ -67,7 +67,11 @@ export default function CrossAppFooter() {
                             <ul className="space-y-2">
                                 {section.links.map((link, index) => (
                                     <li key={index}>
-                                        <a href={link.url} className="hover:text-white transition-colors text-sm">
+                                        <a
+                                            href={link.url}
+                                            className="hover:text-white transition-colors text-sm"
+                                            rel={link.url === 'https://weebcoder.com' || link.url.startsWith('https://weebcoder.com/') ? undefined : 'nofollow'}
+                                        >
                                             {link.name}
                                         </a>
                                     </li>
@@ -84,8 +88,8 @@ export default function CrossAppFooter() {
                     </p>
                     <div className="flex gap-6 text-sm">
                         <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
-                        <a href="https://anime.weebcoder.com/privacy" className="hover:text-white transition-colors">Privacy</a>
-                        <a href="https://anime.weebcoder.com/terms" className="hover:text-white transition-colors">Terms</a>
+                        <a href="https://anime.weebcoder.com/privacy" className="hover:text-white transition-colors" rel="nofollow">Privacy</a>
+                        <a href="https://anime.weebcoder.com/terms" className="hover:text-white transition-colors" rel="nofollow">Terms</a>
                     </div>
                 </div>
             </div>

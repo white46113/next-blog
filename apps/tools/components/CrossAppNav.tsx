@@ -27,6 +27,7 @@ export default function CrossAppNav({ currentApp = 'hub' }) {
                             <a
                                 key={app.key}
                                 href={app.url}
+                                rel={app.key === 'hub' ? undefined : 'nofollow'}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${currentApp === app.key
                                         ? 'bg-purple-100 text-purple-700'
                                         : 'text-gray-700 hover:bg-gray-100'
@@ -53,6 +54,7 @@ export default function CrossAppNav({ currentApp = 'hub' }) {
                         <a
                             key={app.key}
                             href={app.url}
+                            rel={app.key === 'hub' ? undefined : 'nofollow'}
                             className={`block px-4 py-2 rounded-lg text-sm font-medium ${currentApp === app.key
                                     ? 'bg-purple-100 text-purple-700'
                                     : 'text-gray-700 hover:bg-gray-100'
