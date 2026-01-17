@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         description: "Convert PDF files to images (PNG, JPEG, WebP) instantly. Free, fast, and privacy-focused.",
     },
     robots: {
-        index: true,
+        index: false,
         follow: true,
     },
 };

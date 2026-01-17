@@ -13,35 +13,7 @@ export function GET() {
             lastmod: currentDate,
         },
         {
-            url: 'https://tools.weebcoder.com/tools/bmi-calculator',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/jpg-to-pdf',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/pdf-to-image',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/percentage-calculator',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/png-to-webp',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/crop-image',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/qr-code-generator',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/tools/youtube-thumbnail-downloader',
+            url: 'https://tools.weebcoder.com/tools/json-editor',
             lastmod: currentDate,
         },
         {
@@ -53,19 +25,11 @@ export function GET() {
             lastmod: currentDate,
         },
         {
-            url: 'https://tools.weebcoder.com/privacy',
+            url: 'https://tools.weebcoder.com/tools/youtube-thumbnail-downloader',
             lastmod: currentDate,
         },
         {
-            url: 'https://tools.weebcoder.com/terms',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/about',
-            lastmod: currentDate,
-        },
-        {
-            url: 'https://tools.weebcoder.com/contact',
+            url: 'https://tools.weebcoder.com/tools/qr-code-generator',
             lastmod: currentDate,
         }
     ];

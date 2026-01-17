@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calculator, FileImage, QrCode, Download, Bug, Search, Percent, Crop } from 'lucide-react';
+import { ArrowRight, Calculator, FileImage, QrCode, Download, Bug, Search, Percent, Crop, FileJson } from 'lucide-react';
 
 interface Tool {
     name: string;
@@ -22,6 +22,7 @@ const allTools: Tool[] = [
     { name: "YouTube Thumbnail Downloader", href: "/tools/youtube-thumbnail-downloader", description: "Download YouTube thumbnails in HD", category: "Downloader", icon: Download },
     { name: "HTTP Request Tester", href: "/tools/form-data-debugger", description: "Test APIs online - Postman alternative", category: "Developer", icon: Bug },
     { name: "SEO Crawler", href: "/tools/seo-crawler", description: "Find indexing issues on your site", category: "Developer", icon: Search },
+    { name: "JSON Editor", href: "/tools/json-editor", description: "Edit JSON with Monaco Editor and tree view", category: "Developer", icon: FileJson },
 ];
 
 function getCategoryColor(category: string): string {

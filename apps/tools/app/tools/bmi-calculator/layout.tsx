@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         description: "Calculate your Body Mass Index (BMI) to assess your body weight relative to your height. Free, fast, and privacy-focused.",
     },
     robots: {
-        index: true,
+        index: false,
         follow: true,
     },
 };

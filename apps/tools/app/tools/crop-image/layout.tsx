@@ -50,6 +50,10 @@ export const metadata: Metadata = {
     description: "Crop images online for free with our powerful image cropper tool. Crop photos to any size, custom dimensions, or aspect ratio.",
     images: ["https://tools.weebcoder.com/og-image.jpg"],
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function CropImageLayout({
