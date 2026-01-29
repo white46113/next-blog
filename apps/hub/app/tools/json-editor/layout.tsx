@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "json viewer",
   ],
   alternates: {
-    canonical: "https://tools.weebcoder.com/tools/json-editor",
+    canonical: "https://www.weebcoder.com/tools/json-editor",
   },
   openGraph: {
     title: "JSON Editor Online - Monaco Editor with Tree View | Free JSON Validator",
     description: "Free online JSON editor with Monaco Editor (VS Code), tree view, real-time validation, format/minify, and download. Edit and visualize JSON instantly.",
-    url: "https://tools.weebcoder.com/tools/json-editor",
+    url: "https://www.weebcoder.com/tools/json-editor",
     type: "website",
     siteName: "WeebCoder Tools",
   },
