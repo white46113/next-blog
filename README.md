@@ -650,3 +650,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For questions or support, please open an issue in the repository or contact the development team.
 
 Built with ❤️ using Next.js 15 App Router, Turborepo, and Tailwind CSS
+
+# Tools
+
+## Json Editor
+
+A lightweight online JSON editor and validator for formatting, editing, and validating JSON directly in the browser.
+
+👉 [Online JSON Editor](https://www.weebcoder.com/tools/json-editor)

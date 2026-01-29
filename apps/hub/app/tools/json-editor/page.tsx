@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import JsonToolbar from './components/JsonToolbar';
 import JsonEditorTabs from './components/JsonEditorTabs';
-import RelatedTools from '@/components/RelatedTools';
-import CrossAppLinks from '@/components/CrossAppLinks';
 
 export default function JsonEditor() {
   const { recentFiles, loadFromRecent, deleteFromRecent, clearRecent } = useJsonEditorStore();
@@ -85,6 +83,55 @@ export default function JsonEditor() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Edit JSON with Monaco Editor. Validate syntax, format code, visualize tree structure, and download files. VS Code-powered editing in your browser.
           </p>
+        </div>
+
+        {/* Static SEO Content - Loads before Monaco Editor */}
+        <div className="max-w-4xl mx-auto mb-12 space-y-6">
+          <section className="prose prose-gray dark:prose-invert max-w-none">
+            <h2 className="text-2xl font-bold tracking-tight">Online JSON Editor & Validator</h2>
+
+            <p className="text-base text-muted-foreground leading-relaxed">
+              A powerful online JSON editor built with Monaco Editor, the same code editor that powers Visual Studio Code.
+              Edit, validate, format, and visualize JSON data directly in your browser with professional-grade features
+              including syntax highlighting, real-time error detection, IntelliSense, and bracket matching. Perfect for
+              developers working with API responses, configuration files, or any JSON data structure.
+            </p>
+
+            <p className="text-base text-muted-foreground leading-relaxed">
+              This free JSON tool offers both a code view for direct editing and an interactive tree view for visualizing
+              complex nested structures. Format messy JSON with one click, minify for production, or validate syntax
+              instantly. All processing happens locally in your browser—your data never leaves your device, ensuring
+              complete privacy and security.
+            </p>
+
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Whether you're debugging API responses, editing configuration files, or learning JSON structure, this editor
+              provides the tools you need. Upload existing JSON files, edit them with VS Code-quality features, and download
+              the results. Recent files are automatically saved to your browser's local storage for quick access.
+            </p>
+
+            <div className="bg-muted/30 p-6 rounded-lg mt-6">
+              <h3 className="text-lg font-semibold mb-3">Example JSON Structure:</h3>
+              <pre className="bg-background p-4 rounded-md overflow-x-auto text-sm border">
+                {`{
+  "user": {
+    "id": 12345,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "active": true,
+    "roles": ["admin", "editor"],
+    "preferences": {
+      "theme": "dark",
+      "notifications": true
+    }
+  }
+}`}
+              </pre>
+              <p className="text-sm text-muted-foreground mt-3">
+                Paste your JSON above into the editor below to validate, format, or visualize its structure.
+              </p>
+            </div>
+          </section>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-6 mb-12">
@@ -286,12 +333,6 @@ export default function JsonEditor() {
               </Accordion>
             </div>
           </section>
-
-          {/* Related Content */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <RelatedTools currentPath="/tools/json-editor" category="Developer" />
-            <CrossAppLinks />
-          </div>
         </div>
       </div>
     </div>
