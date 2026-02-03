@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/tools/json-editor`,
-            lastModified: new Date(),
+            lastModified: new Date('2026-01-29'),
             changeFrequency: 'weekly' as const,
             priority: 0.8,
         },
