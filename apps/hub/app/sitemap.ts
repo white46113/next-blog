@@ -12,5 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'daily' as const,
             priority: 1.0,
         },
+        {
+            url: `${baseUrl}/tools/json-editor`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        },
     ];
 }
