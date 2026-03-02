@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://weebcoder.com';
+    const baseUrl = 'https://www.weebcoder.com';
 
     // Hub pages only - each subdomain manages its own sitemap
     // Note: Anchor links are not included as they don't represent separate pages

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
     description:
         "A beginner-friendly guide to understanding differentiation and integration in calculus — with visual graphs, real-world examples, and step-by-step formulas.",
     alternates: {
-        canonical: "https://weebcoder.com/articles/integration-vs-differentiation",
+        canonical: "https://www.weebcoder.com/articles/integration-vs-differentiation",
     },
     openGraph: {
         title: "Integration vs Differentiation Explained for Beginners",
         description:
             "Learn the difference between differentiation and integration with clear visuals, graphs, and beginner-friendly math explanations.",
-        url: "https://weebcoder.com/articles/integration-vs-differentiation",
+        url: "https://www.weebcoder.com/articles/integration-vs-differentiation",
         type: "article",
         siteName: "WeebCoder",
         publishedTime: "2026-03-02T00:00:00Z",

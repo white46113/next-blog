@@ -15,8 +15,8 @@ export default function IntegrationVsDifferentiationPage() {
         },
         datePublished: "2026-03-02",
         dateModified: "2026-03-02",
-        url: "https://weebcoder.com/articles/integration-vs-differentiation",
-        mainEntityOfPage: "https://weebcoder.com/articles/integration-vs-differentiation",
+        url: "https://www.weebcoder.com/articles/integration-vs-differentiation",
+        mainEntityOfPage: "https://www.weebcoder.com/articles/integration-vs-differentiation",
     };
 
     const faqSchema = {
