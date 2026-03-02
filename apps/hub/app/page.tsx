@@ -27,24 +27,17 @@ export default function Home() {
 
     const zones = [
         {
-            title: "Anime Zone",
-            description: "Dive into curated anime reviews, top lists, and recommendations for 2025",
-            url: "https://anime.weebcoder.com",
-            gradient: "from-pink-500 via-purple-500 to-indigo-500",
-            icon: "🎭",
+            title: "Technical Articles",
+            description: "Deep dive into programming, mathematics, and technical concepts with our curated guides",
+            url: "/articles/integration-vs-differentiation",
+            gradient: "from-blue-600 via-indigo-600 to-purple-600",
+            icon: "📚",
         },
         {
-            title: "Tech Zone",
-            description: "Master Android & Windows with practical guides and troubleshooting tips",
-            url: "https://tech.weebcoder.com",
-            gradient: "from-blue-500 via-cyan-500 to-teal-500",
-            icon: "💻",
-        },
-        {
-            title: "Tools Zone",
-            description: "Free converters, calculators & utilities - instant, private, and easy to use",
-            url: "https://tools.weebcoder.com",
-            gradient: "from-orange-500 via-red-500 to-pink-500",
+            title: "Developer Tools",
+            description: "Professional-grade web utilities including JSON editors, formatters, and more",
+            url: "/tools/json-editor",
+            gradient: "from-emerald-500 via-teal-500 to-cyan-500",
             icon: "🛠️",
         }
     ];
@@ -78,12 +71,12 @@ export default function Home() {
                             <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 tracking-tight">
                                 Your Ultimate Hub for
                                 <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent mt-2">
-                                    Anime, Tech & Tools
+                                    Articles & Tools
                                 </span>
                             </h1>
 
                             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                                Discover curated anime reviews, master tech tutorials, and access powerful free tools—all in one place
+                                Master complex concepts with our deep-dive articles and boost your productivity with our suite of professional online tools
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -111,12 +104,12 @@ export default function Home() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                             <div className="animate-fade-in">
-                                <div className="text-4xl font-bold text-purple-600 mb-2">3</div>
+                                <div className="text-4xl font-bold text-purple-600 mb-2">2</div>
                                 <div className="text-gray-600 font-medium">Content Zones</div>
                             </div>
                             <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                                <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                                <div className="text-gray-600 font-medium">Free Tools</div>
+                                <div className="text-4xl font-bold text-blue-600 mb-2">Weekly</div>
+                                <div className="text-gray-600 font-medium">New Articles</div>
                             </div>
                             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
                                 <div className="text-4xl font-bold text-pink-600 mb-2">24/7</div>
@@ -134,11 +127,11 @@ export default function Home() {
                                 Explore Our Zones
                             </h2>
                             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                                Three specialized hubs designed to entertain, educate, and empower you
+                                Knowledge and tools designed to empower your development journey
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             {zones.map((zone, index) => (
                                 <div
                                     key={zone.title}
@@ -165,15 +158,13 @@ export default function Home() {
                                         </p>
 
                                         {/* CTA Button */}
-                                        <a
+                                        <Link
                                             href={zone.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
                                             className={`group/btn inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-gradient-to-r ${zone.gradient} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
                                         >
-                                            Visit {zone.title.split(' ')[0]}
+                                            Explore {zone.title.split(' ')[0]}
                                             <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
