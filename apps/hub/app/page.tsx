@@ -10,12 +10,7 @@ export default function Home() {
             {
                 "@type": "WebSite",
                 "name": "WeebCoder",
-                "url": "https://weebcoder.com",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://weebcoder.com/search?q={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                }
+                "url": "https://weebcoder.com"
             },
             {
                 "@type": "Organization",
@@ -37,12 +32,6 @@ export default function Home() {
             url: "https://anime.weebcoder.com",
             gradient: "from-pink-500 via-purple-500 to-indigo-500",
             icon: "🎭",
-            stats: "500+ Reviews",
-            recent: [
-                { title: "Top 10 Anime 2025", url: "https://anime.weebcoder.com/posts/top-10-anime-2025" },
-                { title: "Best Anime Like Solo Leveling", url: "https://anime.weebcoder.com/posts/best-anime-like-solo-leveling" },
-                { title: "Romance Anime Picks", url: "https://anime.weebcoder.com/posts/best-romance-anime" }
-            ]
         },
         {
             title: "Tech Zone",
@@ -50,12 +39,6 @@ export default function Home() {
             url: "https://tech.weebcoder.com",
             gradient: "from-blue-500 via-cyan-500 to-teal-500",
             icon: "💻",
-            stats: "300+ Tutorials",
-            recent: [
-                { title: "Speed Up Your Phone", url: "https://tech.weebcoder.com/articles/how-to-speed-up-your-phone" },
-                { title: "Android Storage Guide", url: "https://tech.weebcoder.com/articles/android-storage-guide" },
-                { title: "Windows 11 Guide", url: "https://tech.weebcoder.com/articles/windows-11-guide" }
-            ]
         },
         {
             title: "Tools Zone",
@@ -63,12 +46,6 @@ export default function Home() {
             url: "https://tools.weebcoder.com",
             gradient: "from-orange-500 via-red-500 to-pink-500",
             icon: "🛠️",
-            stats: "50+ Tools",
-            recent: [
-                { title: "PDF to Image", url: "https://tools.weebcoder.com/tools/pdf-to-image" },
-                { title: "JPG to PDF", url: "https://tools.weebcoder.com/tools/jpg-to-pdf" },
-                { title: "BMI Calculator", url: "https://tools.weebcoder.com/tools/bmi-calculator" }
-            ]
         }
     ];
 
@@ -134,12 +111,12 @@ export default function Home() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                             <div className="animate-fade-in">
-                                <div className="text-4xl font-bold text-purple-600 mb-2">850+</div>
-                                <div className="text-gray-600 font-medium">Total Articles & Tools</div>
+                                <div className="text-4xl font-bold text-purple-600 mb-2">3</div>
+                                <div className="text-gray-600 font-medium">Content Zones</div>
                             </div>
                             <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                                <div className="text-4xl font-bold text-blue-600 mb-2">100K+</div>
-                                <div className="text-gray-600 font-medium">Monthly Readers</div>
+                                <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+                                <div className="text-gray-600 font-medium">Free Tools</div>
                             </div>
                             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
                                 <div className="text-4xl font-bold text-pink-600 mb-2">24/7</div>
@@ -172,14 +149,10 @@ export default function Home() {
                                     <div className={`absolute inset-0 bg-gradient-to-br ${zone.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
 
                                     <div className="relative p-8">
-                                        {/* Icon & Stats */}
+                                        {/* Icon */}
                                         <div className="flex items-start justify-between mb-6">
                                             <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
                                                 {zone.icon}
-                                            </div>
-                                            <div className="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
-                                                <Zap className="w-4 h-4 text-yellow-500" />
-                                                {zone.stats}
                                             </div>
                                         </div>
 
@@ -190,24 +163,6 @@ export default function Home() {
                                         <p className="text-gray-600 mb-6 leading-relaxed">
                                             {zone.description}
                                         </p>
-
-                                        {/* Recent Posts */}
-                                        <div className="mb-6 space-y-2">
-                                            <div className="text-xs uppercase tracking-wide font-semibold text-gray-400 mb-3">
-                                                Popular Now
-                                            </div>
-                                            {zone.recent.map((post, idx) => (
-                                                <a
-                                                    key={idx}
-                                                    href={post.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="block text-sm text-gray-700 hover:text-purple-600 transition-colors truncate"
-                                                >
-                                                    → {post.title}
-                                                </a>
-                                            ))}
-                                        </div>
 
                                         {/* CTA Button */}
                                         <a

@@ -3,18 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "JSON Editor Online - Monaco Editor with Tree View | Free JSON Validator",
   description: "Free online JSON editor with Monaco Editor (VS Code), tree view, real-time validation, format/minify, and download. Edit, validate, and visualize JSON instantly in your browser.",
-  keywords: [
-    "json editor",
-    "monaco editor",
-    "json validator",
-    "json formatter",
-    "json minifier",
-    "json tree view",
-    "online json editor",
-    "vs code json",
-    "json beautifier",
-    "json viewer",
-  ],
+  keywords: ["json editor online", "json validator", "json formatter"],
   alternates: {
     canonical: "https://www.weebcoder.com/tools/json-editor",
   },

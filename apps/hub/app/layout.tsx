@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         canonical: 'https://weebcoder.com',
     },
     description: "Discover anime reviews, tech tutorials, and free online tools. Your one-stop destination for entertainment, learning, and productivity.",
-    keywords: ["anime", "tech tutorials", "online tools", "anime reviews", "technology", "free tools"],
+    keywords: ["anime reviews", "tech tutorials", "free online tools"],
     authors: [{ name: "WeebCoder" }],
     openGraph: {
         title: "WeebCoder - Your Hub for Anime, Tech & Tools",

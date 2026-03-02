@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'daily' as const,
+            changeFrequency: 'weekly' as const,
             priority: 1.0,
         },
         {
@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date('2026-01-29'),
             changeFrequency: 'weekly' as const,
             priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/articles/integration-vs-differentiation`,
+            lastModified: new Date('2026-03-02'),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
         },
     ];
 }
