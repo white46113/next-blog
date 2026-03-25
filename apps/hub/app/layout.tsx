@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.weebcoder.com'),
+    metadataBase: new URL('https://weebcoder.com'),
     title: "WeebCoder - Your Hub for Anime, Tech & Tools",
     alternates: {
-        canonical: 'https://www.weebcoder.com',
+        canonical: 'https://weebcoder.com',
     },
     description: "Discover anime reviews, tech tutorials, and free online tools. Your one-stop destination for entertainment, learning, and productivity.",
     keywords: ["anime reviews", "tech tutorials", "free online tools"],
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "WeebCoder - Your Hub for Anime, Tech & Tools",
         description: "Discover anime reviews, tech tutorials, and free online tools.",
-        url: "https://www.weebcoder.com",
+        url: "https://weebcoder.com",
         siteName: "WeebCoder",
         locale: "en_US",
         type: "website",

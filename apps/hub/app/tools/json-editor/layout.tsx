@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description: "Free online JSON editor with Monaco Editor (VS Code), tree view, real-time validation, format/minify, and download. Edit, validate, and visualize JSON instantly in your browser.",
   keywords: ["json editor online", "json validator", "json formatter"],
   alternates: {
-    canonical: "https://www.weebcoder.com/tools/json-editor",
+    canonical: "https://weebcoder.com/tools/json-editor",
   },
   openGraph: {
     title: "JSON Editor Online - Monaco Editor with Tree View | Free JSON Validator",
     description: "Free online JSON editor with Monaco Editor (VS Code), tree view, real-time validation, format/minify, and download. Edit and visualize JSON instantly.",
-    url: "https://www.weebcoder.com/tools/json-editor",
+    url: "https://weebcoder.com/tools/json-editor",
     type: "website",
     siteName: "WeebCoder Tools",
   },
