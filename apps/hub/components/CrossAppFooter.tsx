@@ -1,5 +1,13 @@
 export default function CrossAppFooter() {
     const sections = {
+        hub: {
+            title: 'Hub',
+            links: [
+                { name: 'Articles', url: '/' },
+                { name: 'Integration vs Differentiation', url: '/articles/integration-vs-differentiation' },
+                { name: 'JSON Editor', url: '/tools/json-editor' },
+            ]
+        },
         anime: {
             title: 'Anime Zone',
             links: [
@@ -39,9 +47,9 @@ export default function CrossAppFooter() {
         <footer className="bg-gray-900 text-gray-300 mt-auto">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
                     {/* Brand Section */}
-                    <div className="md:col-span-2">
+                    <div className="lg:col-span-2">
                         <h3 className="text-2xl font-bold text-white mb-4">WeebCoder</h3>
                         <p className="text-gray-400 mb-4">
                             Your centralized hub for anime reviews, tech tutorials, and free online tools.

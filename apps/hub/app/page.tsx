@@ -172,6 +172,91 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* Featured Content Section - Internal Linking Boost */}
+                <section className="py-20 bg-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                                Featured Content
+                            </h2>
+                            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                                Handpicked guides and tools to accelerate your learning
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {/* Featured Article */}
+                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 shadow-lg hover:shadow-xl transition-shadow">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                        <span className="text-2xl">📐</span>
+                                    </div>
+                                    <span className="text-sm font-semibold text-blue-700 uppercase tracking-wide">Article</span>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                                    Integration vs Differentiation
+                                </h3>
+                                <p className="text-gray-600 mb-6 leading-relaxed">
+                                    Master the fundamentals of calculus with our beginner-friendly visual guide. Learn derivatives, integrals, and the Fundamental Theorem.
+                                </p>
+                                <Link
+                                    href="/articles/integration-vs-differentiation"
+                                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group"
+                                >
+                                    Read Article
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </div>
+
+                            {/* Featured Tool */}
+                            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100 shadow-lg hover:shadow-xl transition-shadow">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                                        <span className="text-2xl">🛠️</span>
+                                    </div>
+                                    <span className="text-sm font-semibold text-emerald-700 uppercase tracking-wide">Tool</span>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                                    JSON Editor
+                                </h3>
+                                <p className="text-gray-600 mb-6 leading-relaxed">
+                                    Format, validate, and edit JSON data with our professional online editor. Real-time syntax highlighting and error detection.
+                                </p>
+                                <Link
+                                    href="/tools/json-editor"
+                                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors group"
+                                >
+                                    Try Tool
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </div>
+
+                            {/* Coming Soon Placeholder */}
+                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 shadow-lg hover:shadow-xl transition-shadow opacity-75">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                        <span className="text-2xl">🚀</span>
+                                    </div>
+                                    <span className="text-sm font-semibold text-purple-700 uppercase tracking-wide">Coming Soon</span>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                                    More Tools & Articles
+                                </h3>
+                                <p className="text-gray-600 mb-6 leading-relaxed">
+                                    We're constantly adding new content and utilities. Check back weekly for fresh resources.
+                                </p>
+                                <Link
+                                    href="/"
+                                    className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors group"
+                                >
+                                    Explore Hub
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Features Section */}
                 <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

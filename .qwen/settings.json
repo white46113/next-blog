@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(weebcoder.com)",
+      "WebSearch"
+    ]
+  },
+  "$version": 3
+}

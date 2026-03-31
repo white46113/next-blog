@@ -66,7 +66,7 @@ export default function IntegrationVsDifferentiationPage() {
                 <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
                     <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
                     <span className="mx-2">/</span>
-                    <span className="text-gray-400">Articles</span>
+                    <Link href="/" className="hover:text-blue-600 transition-colors">Articles</Link>
                     <span className="mx-2">/</span>
                     <span className="text-gray-700 font-medium">Integration vs Differentiation</span>
                 </nav>
@@ -715,7 +715,7 @@ export default function IntegrationVsDifferentiationPage() {
                             },
                             {
                                 q: "How are differentiation and integration used in programming?",
-                                a: "Derivatives are at the core of machine learning — gradient descent uses them to minimize error. Numerical integration is used in physics simulations, finance (option pricing), and statistics (computing probabilities under curves).",
+                                a: "Derivatives are at the core of machine learning — gradient descent uses them to minimize error. Numerical integration is used in physics simulations, finance (option pricing), and statistics (computing probabilities under curves). If you're working with data or algorithms, understanding these concepts gives you a significant advantage.",
                             },
                         ].map((item, i) => (
                             <details key={i} className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
@@ -743,6 +743,48 @@ export default function IntegrationVsDifferentiationPage() {
                         d/dx [∫f(x)dx] = f(x)
                     </div>
                     <p className="text-blue-200 text-sm mt-3">Differentiate an integral → get back the original function.</p>
+                </section>
+
+                {/* Related Resources - Internal Linking Section */}
+                <section className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Related Resources</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Link to Hub Home */}
+                        <Link
+                            href="/"
+                            className="group block bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                        >
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <span className="text-xl">🏠</span>
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+                                    WeebCoder Hub
+                                </h3>
+                            </div>
+                            <p className="text-gray-600 text-sm">
+                                Explore more articles and developer tools at our main hub. New content added weekly.
+                            </p>
+                        </Link>
+
+                        {/* Link to JSON Editor Tool */}
+                        <Link
+                            href="/tools/json-editor"
+                            className="group block bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                        >
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <span className="text-xl">🛠️</span>
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">
+                                    JSON Editor Tool
+                            </h3>
+                            </div>
+                            <p className="text-gray-600 text-sm">
+                                Format, validate, and edit JSON data with our free online developer tool.
+                            </p>
+                        </Link>
+                    </div>
                 </section>
 
                 {/* Navigation */}
